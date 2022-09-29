@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/bilder">
+        <file>apfel.bmp</file>
+        <file>aufgedeckt.bmp</file>
+        <file>back.bmp</file>
+        <file>birne.bmp</file>
+        <file>blume.bmp</file>
+        <file>blume2.bmp</file>
+        <file>ente.bmp</file>
+        <file>fisch.bmp</file>
+        <file>fuchs.bmp</file>
+        <file>igel.bmp</file>
+        <file>kaenguruh.bmp</file>
+        <file>katze.bmp</file>
+        <file>kuh.bmp</file>
+        <file>maus1.bmp</file>
+        <file>maus2.bmp</file>
+        <file>maus3.bmp</file>
+        <file>maus4.bmp</file>
+        <file>melone.bmp</file>
+        <file>pilz.bmp</file>
+        <file>ronny.bmp</file>
+        <file>schmetterling.bmp</file>
+        <file>sonne.bmp</file>
+        <file>wolke.bmp</file>
+        <file>Bild2.png</file>
+    </qresource>
+</RCC>

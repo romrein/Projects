@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/symbol">
+        <file>dateiNeu.bmp</file>
+        <file>dateiOeffnen.bmp</file>
+        <file>dateiSpeichern.bmp</file>
+        <file>info.bmp</file>
+        <file>Bild2.png</file>
+    </qresource>
+</RCC>

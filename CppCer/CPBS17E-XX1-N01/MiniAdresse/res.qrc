@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file>ganzhinten.xpm</file>
+        <file>ganzvorne.xpm</file>
+        <file>hinten.xpm</file>
+        <file>loeschen.xpm</file>
+        <file>vorne.xpm</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>Bild2.png</file>
+        <file>Bild1.png</file>
+    </qresource>
+</RCC>

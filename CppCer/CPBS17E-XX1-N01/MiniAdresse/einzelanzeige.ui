@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>einzelAnzeige</class>
+ <widget class="QMainWindow" name="einzelAnzeige">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>294</width>
+    <height>319</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ort</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PLZ</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditPLZ">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>130</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditVorname">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>70</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditStrasse">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>100</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Strasse</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>50</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditTelefon">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>190</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditOrt">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>160</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditName">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>40</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>200</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Telefon</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>80</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Vorname</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEditID">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>10</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionGanz_nach_vorne"/>
+   <addaction name="actionEinen_nach_vorne"/>
+   <addaction name="actionEinen_nach_hinten"/>
+   <addaction name="actionGanz_nach_hinten"/>
+   <addaction name="actionL_schen"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionGanz_nach_vorne">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/icon/ganzvorne.xpm</normaloff>:/icon/ganzvorne.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Ganz nach vorne</string>
+   </property>
+  </action>
+  <action name="actionEinen_nach_vorne">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/icon/vorne.xpm</normaloff>:/icon/vorne.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Einen nach vorne</string>
+   </property>
+  </action>
+  <action name="actionEinen_nach_hinten">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/icon/hinten.xpm</normaloff>:/icon/hinten.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Einen nach hinten</string>
+   </property>
+  </action>
+  <action name="actionGanz_nach_hinten">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/icon/ganzhinten.xpm</normaloff>:/icon/ganzhinten.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Ganz nach hinten</string>
+   </property>
+  </action>
+  <action name="actionL_schen">
+   <property name="icon">
+    <iconset resource="res.qrc">
+     <normaloff>:/icon/loeschen.xpm</normaloff>:/icon/loeschen.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Löschen</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+</ui>
