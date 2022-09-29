@@ -1,0 +1,547 @@
+# tracer: function_graph
+#
+#     TIME        CPU  TASK/PID         DURATION                  FUNCTION CALLS
+#      |          |     |    |           |   |                     |   |   |   |
+  726.954516 |   0)   a.out-922    |               |  uart_write() {
+  726.954529 |   0)   a.out-922    |               |    _raw_spin_lock_irqsave() {
+  726.954532 |   0)   a.out-922    |   1.000 us    |      preempt_count_add();
+  726.954539 |   0)   a.out-922    |   7.667 us    |    }
+  726.954543 |   0)   a.out-922    |               |    __uart_start() {
+  726.954547 |   0)   a.out-922    |               |      imx_start_tx() {
+  726.954551 |   0)   a.out-922    |   1.000 us    |        arm_heavy_mb();
+  726.954557 |   0)   a.out-922    |   7.333 us    |      }
+  726.954560 |   0)   a.out-922    | + 14.000 us   |    }
+  726.954562 |   0)   a.out-922    |               |    _raw_spin_unlock_irqrestore() {
+  726.954566 |   0)   a.out-922    |   ==========> |
+  726.954566 |   0)   a.out-922    |               |      gic_handle_irq() {
+  726.954570 |   0)   a.out-922    |               |        __handle_domain_irq() {
+  726.954573 |   0)   a.out-922    |               |          irq_enter() {
+  726.954575 |   0)   a.out-922    |   1.000 us    |            rcu_irq_enter();
+  726.954580 |   0)   a.out-922    |   1.000 us    |            preempt_count_add();
+  726.954586 |   0)   a.out-922    | + 11.000 us   |          }
+  726.954588 |   0)   a.out-922    |   1.000 us    |          irq_find_mapping();
+  726.954594 |   0)   a.out-922    |               |          generic_handle_irq() {
+  726.954598 |   0)   a.out-922    |               |            handle_fasteoi_irq() {
+  726.954601 |   0)   a.out-922    |               |              _raw_spin_lock() {
+  726.954603 |   0)   a.out-922    |   1.000 us    |                preempt_count_add();
+  726.954609 |   0)   a.out-922    |   5.667 us    |              }
+  726.954611 |   0)   a.out-922    |   1.000 us    |              irq_may_run();
+  726.954617 |   0)   a.out-922    |               |              handle_irq_event() {
+  726.954620 |   0)   a.out-922    |               |                _raw_spin_unlock() {
+  726.954622 |   0)   a.out-922    |   1.333 us    |                  preempt_count_sub();
+  726.954628 |   0)   a.out-922    |   6.667 us    |                }
+  726.954631 |   0)   a.out-922    |               |                handle_irq_event_percpu() {
+  726.954634 |   0)   a.out-922    |               |                  __handle_irq_event_percpu() {
+  726.954638 |   0)   a.out-922    |               |                    imx_int() {
+  726.954641 |   0)   a.out-922    |               |                      imx_txint() {
+  726.954644 |   0)   a.out-922    |               |                        _raw_spin_lock_irqsave() {
+  726.954647 |   0)   a.out-922    |   0.667 us    |                          preempt_count_add();
+  726.954652 |   0)   a.out-922    |   5.666 us    |                        }
+  726.954655 |   0)   a.out-922    |   0.666 us    |                        arm_heavy_mb();
+  726.954660 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954666 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954671 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954676 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954681 |   0)   a.out-922    |   0.666 us    |                        arm_heavy_mb();
+  726.954686 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954691 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954697 |   0)   a.out-922    |   1.000 us    |                        arm_heavy_mb();
+  726.954702 |   0)   a.out-922    |   0.666 us    |                        arm_heavy_mb();
+  726.954707 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954713 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+;
+  726.954660 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954666 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954671 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954676 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954681 |   0)   a.out-922    |   0.666 us    |                        arm_heavy_mb();
+  726.954686 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954691 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954697 |   0)   a.out-922    |   1.000 us    |                        arm_heavy_mb();
+  726.954702 |   0)   a.out-922    |   0.666 us    |                        arm_heavy_mb();
+  726.954707 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954713 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954718 |   0)   a.out-922    |   1.000 us    |                        arm_heavy_mb();
+  726.954723 |   0)   a.out-922    |   0.666 us    |                        arm_heavy_mb();
+  726.954728 |   0)   a.out-922    |   0.666 us    |                        arm_heavy_mb();
+  726.954733 |   0)   a.out-922    |   0.666 us    |                        arm_heavy_mb();
+  726.954738 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954743 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954749 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954754 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954760 |   0)   a.out-922    |   0.666 us    |                        arm_heavy_mb();
+  726.954765 |   0)   a.out-922    |   0.666 us    |                        arm_heavy_mb();
+  726.954770 |   0)   a.out-922    |   1.000 us    |                        arm_heavy_mb();
+  726.954775 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954780 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954787 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954792 |   0)   a.out-922    |   0.667 us    |                        arm_heavy_mb();
+  726.954797 |   0)   a.out-922    |               |                        uart_write_wakeup() {
+  726.954800 |   0)   a.out-922    |               |                          tty_port_tty_wakeup() {
+  726.954803 |   0)   a.out-922    |               |                            tty_port_default_wakeup() {
+  726.954805 |   0)   a.out-922    |               |                              tty_port_tty_get() {
+  726.954808 |   0)   a.out-922    |               |                                _raw_spin_lock_irqsave() {
+  726.954811 |   0)   a.out-922    |   0.666 us    |                                  preempt_count_add();
+  726.954817 |   0)   a.out-922    |   6.667 us    |                                }
+  726.954819 |   0)   a.out-922    |               |                                _raw_spin_unlock_irqrestore() {
+  726.954821 |   0)   a.out-922    |   1.000 us    |                                  preempt_count_sub();
+  726.954827 |   0)   a.out-922    |   5.333 us    |                                }
+  726.954829 |   0)   a.out-922    | + 21.000 us   |                              }
+  726.954831 |   0)   a.out-922    |               |                              tty_wakeup() {
+  726.954834 |   0)   a.out-922    |               |                                __wake_up() {
+  726.954836 |   0)   a.out-922    |               |                                  __wake_up_common_lock() {
+  726.954839 |   0)   a.out-922    |               |                                    _raw_spin_lock_irqsave() {
+  726.954841 |   0)   a.out-922    |   0.667 us    |                                      preempt_count_add();
+  726.954846 |   0)   a.out-922    |   5.667 us    |                                    }
+  726.954849 |   0)   a.out-922    |               |                                    __wake_up_common() {
+  726.954852 |   0)   a.out-922    |               |                                      woken_wake_function() {
+  726.954854 |   0)   a.out-922    |               |                                        default_wake_function() {
+  726.954858 |   0)   a.out-922    |               |                                          try_to_wake_up() {
+  726.954860 |   0)   a.out-922    |               |                                            _raw_spin_lock_irqsave() {
+  726.954863 |   0)   a.out-922    |   0.667 us    |                                              preempt_count_add();
+  726.954868 |   0)   a.out-922    |   5.666 us    |                                            }
+  726.954870 |   0)   a.out-922    |               |                                            _raw_spin_unlock_irqrestore() {
+  726.954873 |   0)   a.out-922    |   0.667 us    |                                              preempt_count_sub();
+  726.954878 |   0)   a.out-922    |   5.666 us    |                                            }
+  726.954880 |   0)   a.out-922    | + 20.334 us   |                                          }
+  726.954882 |   0)   a.out-922    | + 25.667 us   |                                        }
+  726.954884 |   0)   a.out-922    | + 30.667 us   |                                      }
+  726.954887 |   0)   a.out-922    | + 35.666 us   |                                    }
+  726.954889 |   0)   a.out-922    |               |                                    _raw_spin_unlock_irqrestore() {
+  726.954891 |   0)   a.out-922    |   0.667 us    |                                      preempt_count_sub();
+  726.954897 |   0)   a.out-922    |   6.000 us    |                                    }
+  726.954899 |   0)   a.out-922    | + 60.667 us   |                                  }
+  726.954901 |   0)   a.out-922    | + 65.334 us   |                                }
+  726.954903 |   0)   a.out-922    | + 70.667 us   |                              }
+  726.954911 |   0)   a.out-922    |   1.000 us    |                              tty_kref_put();
+  726.954917 |   0)   a.out-922    | ! 111.666 us  |                            }
+  726.954919 |   0)   a.out-922    | ! 117.000 us  |                          }
+  726.954923 |   0)   a.out-922    | ! 123.000 us  |                        }
+  726.954925 |   0)   a.out-922    |               |                        imx_stop_tx() {
+  726.954928 |   0)   a.out-922    |   1.000 us    |                          arm_heavy_mb();
+  726.954933 |   0)   a.out-922    |   6.334 us    |                        }
+  726.954935 |   0)   a.out-922    |               |                        _raw_spin_unlock_irqrestore() {
+  726.954937 |   0)   a.out-922    |   1.000 us    |                          preempt_count_sub();
+  726.954943 |   0)   a.out-922    |   5.333 us    |                        }
+  726.954945 |   0)   a.out-922    | ! 301.333 us  |                      }
+  726.954949 |   0)   a.out-922    | ! 308.667 us  |                    }
+  726.954952 |   0)   a.out-922    | ! 315.000 us  |                  }
+  726.954954 |   0)   a.out-922    |               |                  add_interrupt_randomness() {
+  726.954957 |   0)   a.out-922    |               |                    read_current_timer() {
+  726.954960 |   0)   a.out-922    |   1.000 us    |                      imx_read_current_timer();
+  726.954966 |   0)   a.out-922    |   6.333 us    |                    }
+  726.954969 |   0)   a.out-922    | + 13.334 us   |                  }
+  726.954972 |   0)   a.out-922    |   3.000 us    |                  note_interrupt();
+  726.954979 |   0)   a.out-922    | ! 346.000 us  |                }
+  726.954981 |   0)   a.out-922    |               |                _raw_spin_lock() {
+  726.954983 |   0)   a.out-922    |   0.667 us    |                  preempt_count_add();
+  726.954989 |   0)   a.out-922    |   5.333 us    |                }
+  726.954991 |   0)   a.out-922    | ! 372.000 us  |              }
+  726.954993 |   0)   a.out-922    |               |              irq_chip_eoi_parent() {
+  726.954996 |   0)   a.out-922    |   1.000 us    |                gic_eoi_irq();
+  726.955002 |   0)   a.out-922    |   6.000 us    |              }
+  726.955005 |   0)   a.out-922    |               |              _raw_spin_unlock() {
+  726.955007 |   0)   a.out-922    |   0.667 us    |                preempt_count_sub();
+  726.955013 |   0)   a.out-922    |   5.667 us    |              }
+  726.955015 |   0)   a.out-922    | ! 414.666 us  |            }
+  726.955017 |   0)   a.out-922    | ! 420.667 us  |          }
+  726.955019 |   0)   a.out-922    |               |          irq_exit() {
+  726.955022 |   0)   a.out-922    |   0.667 us    |            preempt_count_sub();
+  726.955027 |   0)   a.out-922    |   1.000 us    |            idle_cpu();
+  726.955032 |   0)   a.out-922    |   1.000 us    |            rcu_irq_exit();
+  726.955038 |   0)   a.out-922    | + 16.666 us   |          }
+  726.955040 |   0)   a.out-922    | ! 468.334 us  |        }
+  726.955042 |   0)   a.out-922    |               |        __handle_domain_irq() {
+  726.955045 |   0)   a.out-922    |               |          irq_enter() {
+  726.955047 |   0)   a.out-922    |   1.000 us    |            rcu_irq_enter();
+  726.955052 |   0)   a.out-922    |   1.000 us    |            preempt_count_add();
+  726.955059 |   0)   a.out-922    | + 11.667 us   |          }
+  726.955060 |   0)   a.out-922    |   0.667 us    |          irq_find_mapping();
+  726.955065 |   0)   a.out-922    |               |          generic_handle_irq() {
+  726.955069 |   0)   a.out-922    |               |            handle_fasteoi_irq() {
+  726.955071 |   0)   a.out-922    |               |              _raw_spin_lock() {
+  726.955074 |   0)   a.out-922    |   0.667 us    |                preempt_count_add();
+  726.955079 |   0)   a.out-922    |   5.666 us    |              }
+  726.955081 |   0)   a.out-922    |   0.666 us    |              irq_may_run();
+  726.955086 |   0)   a.out-922    |               |              handle_irq_event() {
+  726.955089 |   0)   a.out-922    |               |                _raw_spin_unlock() {
+  726.955091 |   0)   a.out-922    |   1.000 us    |                  preempt_count_sub();
+  726.955097 |   0)   a.out-922    |   5.666 us    |                }
+  726.955099 |   0)   a.out-922    |               |                handle_irq_event_percpu() {
+  726.955101 |   0)   a.out-922    |               |                  __handle_irq_event_percpu() {
+  726.955104 |   0)   a.out-922    |               |                    fec_enet_interrupt() {
+  726.955108 |   0)   a.out-922    |   0.666 us    |                      arm_heavy_mb();
+  726.955114 |   0)   a.out-922    |   1.000 us    |                      napi_schedule_prep();
+  726.955119 |   0)   a.out-922    |   0.667 us    |                      arm_heavy_mb();
+  726.955125 |   0)   a.out-922    |               |                      __napi_schedule() {
+  726.955128 |   0)   a.out-922    |   1.000 us    |                        __raise_softirq_irqoff();
+  726.955133 |   0)   a.out-922    |   6.334 us    |                      }
+  726.955135 |   0)   a.out-922    |   2.667 us    |                      fec_ptp_check_pps_event();
+  726.955142 |   0)   a.out-922    | + 36.000 us   |                    }
+  726.955145 |   0)   a.out-922    | + 41.000 us   |                  }
+  726.955147 |   0)   a.out-922    |               |                  add_interrupt_randomness() {
+  726.955149 |   0)   a.out-922    |               |                    read_current_timer() {
+  726.955152 |   0)   a.out-922    |   1.000 us    |                      imx_read_current_timer();
+  726.955157 |   0)   a.out-922    |   6.000 us    |                    }
+  726.955160 |   0)   a.out-922    | + 11.000 us   |                  }
+  726.955162 |   0)   a.out-922    |   2.334 us    |                  note_interrupt();
+  726.955168 |   0)   a.out-922    | + 67.667 us   |                }
+  726.955170 |   0)   a.out-922    |               |                _raw_spin_lock() {
+  726.955173 |   0)   a.out-922    |   1.000 us    |                  preempt_count_add();
+  726.955178 |   0)   a.out-922    |   5.333 us    |                }
+  726.955180 |   0)   a.out-922    | + 91.667 us   |              }
+  726.955182 |   0)   a.out-922    |               |              irq_chip_eoi_parent() {
+  726.955185 |   0)   a.out-922    |   0.666 us    |                gic_eoi_irq();
+  726.955190 |   0)   a.out-922    |   5.333 us    |              }
+  726.955192 |   0)   a.out-922    |               |              _raw_spin_unlock() {
+  726.955194 |   0)   a.out-922    |   0.667 us    |                preempt_count_sub();
+  726.955200 |   0)   a.out-922    |   6.334 us    |              }
+  726.955202 |   0)   a.out-922    | ! 131.334 us  |            }
+  726.955205 |   0)   a.out-922    | ! 137.000 us  |          }
+  726.955206 |   0)   a.out-922    |               |          irq_exit() {
+  726.955209 |   0)   a.out-922    |   0.666 us    |            preempt_count_sub();
+  726.955214 |   0)   a.out-922    |   2.333 us    |            ksoftirqd_running();
+  726.955221 |   0)   a.out-922    |               |            __do_softirq() {
+  726.955224 |   0)   a.out-922    |   0.666 us    |              preempt_count_add();
+  726.955231 |   0)   a.out-922    |               |              net_rx_action() {
+  726.955234 |   0)   a.out-922    |   0.667 us    |                __usecs_to_jiffies();
+  726.955241 |   0)   a.out-922    |               |                fec_enet_rx_napi() {
+  726.955247 |   0)   a.out-922    |               |                  arm_dma_unmap_page() {
+  726.955250 |   0)   a.out-922    |   1.000 us    |                    __dma_page_dev_to_cpu();
+  726.955256 |   0)   a.out-922    |   6.333 us    |                  }
+  726.955259 |   0)   a.out-922    |               |                  __dev_kfree_skb_any() {
+  726.955262 |   0)   a.out-922    |               |                    consume_skb() {
+  726.955265 |   0)   a.out-922    |               |                      skb_release_all() {
+  726.955268 |   0)   a.out-922    |               |                        skb_release_head_state() {
+  726.955271 |   0)   a.out-922    |               |                          tcp_wfree() {
+  726.955275 |   0)   a.out-922    |               |                            __tasklet_schedule() {
+  726.955279 |   0)   a.out-922    |   0.667 us    |                              __raise_softirq_irqoff();
+  726.955286 |   0)   a.out-922    |   6.000 us    |                            }
+  726.955288 |   0)   a.out-922    | + 15.334 us   |                          }
+  726.955291 |   0)   a.out-922    | + 21.334 us   |                        }
+  726.955294 |   0)   a.out-922    |   0.667 us    |                        skb_release_data();
+  726.955299 |   0)   a.out-922    | + 31.666 us   |                      }
+  726.955302 |   0)   a.out-922    |   1.333 us    |                      kfree_skbmem();
+  726.955308 |   0)   a.out-922    | + 43.666 us   |                    }
+  726.955310 |   0)   a.out-922    | + 49.000 us   |                  }
+  726.955312 |   0)   a.out-922    |   1.000 us    |                  arm_heavy_mb();
+  726.955318 |   0)   a.out-922    |   1.666 us    |                  napi_complete_done();
+  726.955324 |   0)   a.out-922    |   1.000 us    |                  arm_heavy_mb();
+  726.955331 |   0)   a.out-922    | + 87.667 us   |                }
+  726.955333 |   0)   a.out-922    |   1.000 us    |                __kfree_skb_flush();
+  726.955339 |   0)   a.out-922    | ! 105.333 us  |              }
+  726.955341 |   0)   a.out-922    |   1.000 us    |              rcu_bh_qs();
+  726.955347 |   0)   a.out-922    |               |              tasklet_action() {
+  726.955352 |   0)   a.out-922    |               |                tcp_tasklet_func() {
+  726.955356 |   0)   a.out-922    |               |                  _raw_spin_lock() {
+  726.955358 |   0)   a.out-922    |   0.667 us    |                    preempt_count_add();
+  726.955364 |   0)   a.out-922    |   5.666 us    |                  }
+  726.955366 |   0)   a.out-922    |               |                  tcp_tsq_handler.part.8() {
+  726.955369 |   0)   a.out-922    |               |                    tcp_current_mss() {
+  726.955372 |   0)   a.out-922    |   1.000 us    |                      ipv4_mtu();
+  726.955377 |   0)   a.out-922    |   6.333 us    |                    }
+  726.955379 |   0)   a.out-922    |               |                    tcp_write_xmit() {
+  726.955384 |   0)   a.out-922    |   1.667 us    |                      tcp_tso_segs();
+  726.955390 |   0)   a.out-922    |   1.333 us    |                      tcp_init_tso_segs();
+  726.955397 |   0)   a.out-922    |   1.000 us    |                      tcp_small_queue_check();
+  726.955403 |   0)   a.out-922    |               |                      __tcp_transmit_skb() {
+  726.955406 |   0)   a.out-922    |               |                        skb_clone() {
+  726.955409 |   0)   a.out-922    |               |                          __skb_clone() {
+  726.955412 |   0)   a.out-922    |   2.000 us    |                            __copy_skb_header();
+  726.955418 |   0)   a.out-922    |   6.667 us    |                          }
+  726.955421 |   0)   a.out-922    | + 12.333 us   |                        }
+  726.955424 |   0)   a.out-922    |   1.000 us    |                        skb_push();
+  726.955430 |   0)   a.out-922    |   1.334 us    |                        tcp_options_write();
+  726.955435 |   0)   a.out-922    |   1.333 us    |                        __tcp_select_window();
+  726.955442 |   0)   a.out-922    |               |                        tcp_v4_send_check() {
+  726.955445 |   0)   a.out-922    |   0.667 us    |                          __tcp_v4_send_check();
+  726.955450 |   0)   a.out-922    |   6.000 us    |                        }
+  726.955454 |   0)   a.out-922    |               |                        ip_queue_xmit() {
+  726.955457 |   0)   a.out-922    |   0.667 us    |                          __rcu_read_lock();
+  726.955463 |   0)   a.out-922    |               |                          __sk_dst_check() {
+  726.955466 |   0)   a.out-922    |   1.000 us    |                            ipv4_dst_check();
+  726.955472 |   0)   a.out-922    |   6.000 us    |                          }
+  726.955474 |   0)   a.out-922    |   0.667 us    |                          skb_push();
+  726.955480 |   0)   a.out-922    |               |                          ip_local_out() {
+  726.955482 |   0)   a.out-922    |               |                            __ip_local_out() {
+  726.955485 |   0)   a.out-922    |   1.000 us    |                              ip_send_check();
+  726.955491 |   0)   a.out-922    |   0.667 us    |                              __rcu_read_lock();
+  726.955496 |   0)   a.out-922    |   0.667 us    |                              __rcu_read_unlock();
+  726.955501 |   0)   a.out-922    | + 16.000 us   |                            }
+  726.955503 |   0)   a.out-922    |               |                            ip_output() {
+  726.955506 |   0)   a.out-922    |   0.667 us    |                              preempt_count_add();
+  726.955511 |   0)   a.out-922    |               |                              __local_bh_enable_ip() {
+  726.955514 |   0)   a.out-922    |   2.334 us    |                                preempt_count_sub();
+  726.955520 |   0)   a.out-922    |   1.000 us    |                                preempt_count_sub();
+  726.955525 |   0)   a.out-922    | + 12.333 us   |                              }
+  726.955527 |   0)   a.out-922    |   0.667 us    |                              __rcu_read_lock();
+  726.955532 |   0)   a.out-922    |   0.666 us    |                              __rcu_read_unlock();
+  726.955537 |   0)   a.out-922    |               |                              ip_finish_output() {
+  726.955541 |   0)   a.out-922    |   0.666 us    |                                ipv4_mtu();
+  726.955546 |   0)   a.out-922    |               |                                ip_finish_output2() {
+  726.955549 |   0)   a.out-922    |   0.667 us    |                                  preempt_count_add();
+  726.955556 |   0)   a.out-922    |   0.667 us    |                                  skb_push();
+  726.955561 |   0)   a.out-922    |               |                                  dev_queue_xmit() {
+  726.955564 |   0)   a.out-922    |               |                                    __dev_queue_xmit() {
+  726.955567 |   0)   a.out-922    |   0.667 us    |                                      preempt_count_add();
+  726.955574 |   0)   a.out-922    |   1.333 us    |                                      netdev_pick_tx();
+  726.955580 |   0)   a.out-922    |               |                                      _raw_spin_lock() {
+  726.955583 |   0)   a.out-922    |   0.667 us    |                                        preempt_count_add();
+  726.955588 |   0)   a.out-922    |   5.667 us    |                                      }
+  726.955591 |   0)   a.out-922    |               |                                      sch_direct_xmit() {
+  726.955593 |   0)   a.out-922    |               |                                        _raw_spin_unlock() {
+  726.955596 |   0)   a.out-922    |   0.667 us    |                                          preempt_count_sub();
+  726.955603 |   0)   a.out-922    |   7.000 us    |                                        }
+  726.955605 |   0)   a.out-922    |               |                                        validate_xmit_skb_list() {
+  726.955608 |   0)   a.out-922    |               |                                          validate_xmit_skb() {
+  726.955611 |   0)   a.out-922    |               |                                            netif_skb_features() {
+  726.955615 |   0)   a.out-922    |   1.000 us    |                                              skb_network_protocol();
+  726.955623 |   0)   a.out-922    |   9.333 us    |                                            }
+  726.955626 |   0)   a.out-922    |   0.667 us    |                                            skb_csum_hwoffload_help();
+  726.955632 |   0)   a.out-922    | + 21.667 us   |                                          }
+  726.955634 |   0)   a.out-922    | + 27.000 us   |                                        }
+  726.955636 |   0)   a.out-922    |               |                                        _raw_spin_lock() {
+  726.955639 |   0)   a.out-922    |   0.667 us    |                                          preempt_count_add();
+  726.955644 |   0)   a.out-922    |   5.666 us    |                                        }
+  726.955646 |   0)   a.out-922    |               |                                        dev_hard_start_xmit() {
+  726.955650 |   0)   a.out-922    |               |                                          dev_queue_xmit_nit() {
+  726.955652 |   0)   a.out-922    |   0.667 us    |                                            __rcu_read_lock();
+  726.955658 |   0)   a.out-922    |               |                                            skb_clone() {
+  726.955661 |   0)   a.out-922    |               |                                              kmem_cache_alloc() {
+  726.955664 |   0)   a.out-922    |   1.000 us    |                                                memcg_kmem_put_cache();
+  726.955670 |   0)   a.out-922    |   6.667 us    |                                              }
+  726.955672 |   0)   a.out-922    |               |                                              __skb_clone() {
+  726.955674 |   0)   a.out-922    |   1.000 us    |                                                __copy_skb_header();
+  726.955681 |   0)   a.out-922    |   7.000 us    |                                              }
+  726.955686 |   0)   a.out-922    | + 23.333 us   |                                            }
+  726.955689 |   0)   a.out-922    |               |                                            ktime_get_with_offset() {
+  726.955692 |   0)   a.out-922    |   1.000 us    |                                              clocksource_mmio_readl_up();
+  726.955697 |   0)   a.out-922    |   6.667 us    |                                            }
+  726.955700 |   0)   a.out-922    |               |                                            packet_rcv() {
+  726.955704 |   0)   a.out-922    |   0.667 us    |                                              skb_push();
+  726.955709 |   0)   a.out-922    |               |                                              run_filter() {
+  726.955712 |   0)   a.out-922    |   0.667 us    |                                                __rcu_read_lock();
+  726.955717 |   0)   a.out-922    |               |                                                __bpf_prog_run32() {
+  726.955720 |   0)   a.out-922    |   4.667 us    |                                                  ___bpf_prog_run();
+  726.955729 |   0)   a.out-922    |   10.000 us   |                                                }
+  726.955731 |   0)   a.out-922    |   0.667 us    |                                                __rcu_read_unlock();
+  726.955736 |   0)   a.out-922    | + 25.333 us   |                                              }
+  726.955738 |   0)   a.out-922    |               |                                              consume_skb() {
+  726.955741 |   0)   a.out-922    |               |                                                skb_release_all() {
+  726.955744 |   0)   a.out-922    |   1.000 us    |                                                  skb_release_head_state();
+  726.955749 |   0)   a.out-922    |   1.333 us    |                                                  skb_release_data();
+  726.955755 |   0)   a.out-922    | + 11.000 us   |                                                }
+  726.955757 |   0)   a.out-922    |               |                                                kfree_skbmem() {
+  726.955759 |   0)   a.out-922    |   3.333 us    |                                                  kmem_cache_free();
+  726.955767 |   0)   a.out-922    |   8.000 us    |                                                }
+  726.955769 |   0)   a.out-922    | + 29.000 us   |                                              }
+  726.955772 |   0)   a.out-922    | + 69.333 us   |                                            }
+  726.955773 |   0)   a.out-922    |   1.000 us    |                                            __rcu_read_unlock();
+  726.955779 |   0)   a.out-922    | ! 126.667 us  |                                          }
+  726.955781 |   0)   a.out-922    |               |                                          fec_enet_start_xmit() {
+  726.955784 |   0)   a.out-922    |   1.000 us    |                                            fec_enet_clear_csum.constprop.10();
+  726.955792 |   0)   a.out-922    |               |                                            arm_dma_map_page() {
+  726.955795 |   0)   a.out-922    |               |                                              __dma_page_cpu_to_dev() {
+  726.955798 |   0)   a.out-922    |               |                                                dma_cache_maint_page() {
+  726.955801 |   0)   a.out-922    |   1.334 us    |                                                  page_address();
+  726.955807 |   0)   a.out-922    |   7.000 us    |                                                }
+  726.955809 |   0)   a.out-922    | + 12.000 us   |                                              }
+  726.955812 |   0)   a.out-922    | + 17.333 us   |                                            }
+  726.955815 |   0)   a.out-922    |   1.000 us    |                                            arm_dma_mapping_error();
+  726.955821 |   0)   a.out-922    |   0.667 us    |                                            page_address();
+  726.955827 |   0)   a.out-922    |               |                                            arm_dma_map_page() {
+  726.955829 |   0)   a.out-922    |               |                                              __dma_page_cpu_to_dev() {
+  726.955832 |   0)   a.out-922    |               |                        ;
+  726.955489 |   0)   a.out-922    |   1.000 us    |                              } /* ip_send_check */
+  726.955491 |   0)   a.out-922    |   0.667 us    |                              __rcu_read_lock();
+  726.955496 |   0)   a.out-922    |   0.667 us    |                              __rcu_read_unlock();
+  726.955501 |   0)   a.out-922    | + 16.000 us   |                            } /* __ip_local_out */
+  726.955503 |   0)   a.out-922    |               |                            ip_output() {
+  726.955506 |   0)   a.out-922    |   0.667 us    |                              preempt_count_add();
+  726.955511 |   0)   a.out-922    |               |                              __local_bh_enable_ip() {
+  726.955514 |   0)   a.out-922    |   2.334 us    |                                preempt_count_sub();
+  726.955520 |   0)   a.out-922    |   1.000 us    |                                preempt_count_sub();
+  726.955525 |   0)   a.out-922    | + 12.333 us   |                              }
+  726.955527 |   0)   a.out-922    |   0.667 us    |                              __rcu_read_lock();
+  726.955532 |   0)   a.out-922    |   0.666 us    |                              __rcu_read_unlock();
+  726.955537 |   0)   a.out-922    |               |                              ip_finish_output() {
+  726.955541 |   0)   a.out-922    |   0.666 us    |                                ipv4_mtu();
+  726.955546 |   0)   a.out-922    |               |                                ip_finish_output2() {
+  726.955549 |   0)   a.out-922    |   0.667 us    |                                  preempt_count_add();
+  726.955556 |   0)   a.out-922    |   0.667 us    |                                  skb_push();
+  726.955561 |   0)   a.out-922    |               |                                  dev_queue_xmit() {
+  726.955564 |   0)   a.out-922    |               |                                    __dev_queue_xmit() {
+  726.955567 |   0)   a.out-922    |   0.667 us    |                                      preempt_count_add();
+  726.955574 |   0)   a.out-922    |   1.333 us    |                                      netdev_pick_tx();
+  726.955580 |   0)   a.out-922    |               |                                      _raw_spin_lock() {
+  726.955583 |   0)   a.out-922    |   0.667 us    |                                        preempt_count_add();
+  726.955588 |   0)   a.out-922    |   5.667 us    |                                      }
+  726.955591 |   0)   a.out-922    |               |                                      sch_direct_xmit() {
+  726.955593 |   0)   a.out-922    |               |                                        _raw_spin_unlock() {
+  726.955596 |   0)   a.out-922    |   0.667 us    |                                          preempt_count_sub();
+  726.955603 |   0)   a.out-922    |   7.000 us    |                                        }
+  726.955605 |   0)   a.out-922    |               |                                        validate_xmit_skb_list() {
+  726.955608 |   0)   a.out-922    |               |                                          validate_xmit_skb() {
+  726.955611 |   0)   a.out-922    |               |                                            netif_skb_features() {
+  726.955615 |   0)   a.out-922    |   1.000 us    |                                              skb_network_protocol();
+  726.955623 |   0)   a.out-922    |   9.333 us    |                                            }
+  726.955626 |   0)   a.out-922    |   0.667 us    |                                            skb_csum_hwoffload_help();
+  726.955632 |   0)   a.out-922    | + 21.667 us   |                                          }
+  726.955634 |   0)   a.out-922    | + 27.000 us   |                                        }
+  726.955636 |   0)   a.out-922    |               |                                        _raw_spin_lock() {
+  726.955639 |   0)   a.out-922    |   0.667 us    |                                          preempt_count_add();
+  |   1.000 us    |                      tcp_chrono_stop();
+  726.955608 |   0)   a.out-922    |               |                                          validate_xmit_skb() {
+  726.955611 |   0)   a.out-922    |               |                                            netif_skb_features() {
+  726.955615 |   0)   a.out-922    |   1.000 us    |                                              skb_network_protocol();
+  726.955623 |   0)   a.out-922    |   9.333 us    |                                            }
+  726.955626 |   0)   a.out-922    |   0.667 us    |                                            skb_csum_hwoffload_help();
+  726.955632 |   0)   a.out-922    | + 21.667 us   |                                          }
+  726.955634 |   0)   a.out-922    | + 27.000 us   |                                        } /* validate_xmit_skb_list */
+  726.955636 |   0)   a.out-922    |               |                                        _raw_spin_lock() {
+  726.955639 |   0)   a.out-922    |   0.667 us    |                                          preempt_count_add();
+  726.955644 |   0)   a.out-922    |   5.666 us    |                                        }
+  726.955646 |   0)   a.out-922    |               |                                        dev_hard_start_xmit() {
+  726.955650 |   0)   a.out-922    |               |                                          dev_queue_xmit_nit() {
+  726.955652 |   0)   a.out-922    |   0.667 us    |                                            __rcu_read_lock();
+  726.955658 |   0)   a.out-922    |               |                                            skb_clone() {
+  726.955661 |   0)   a.out-922    |               |                                              kmem_cache_alloc() {
+  726.955664 |   0)   a.out-922    |   1.000 us    |                                                memcg_kmem_put_cache();
+  726.955670 |   0)   a.out-922    |   6.667 us    |                                              }
+  726.955672 |   0)   a.out-922    |               |                                              __skb_clone() {
+  726.955674 |   0)   a.out-922    |   1.000 us    |                                                __copy_skb_header();
+  726.955681 |   0)   a.out-922    |   7.000 us    |                                              }
+  726.955686 |   0)   a.out-922    | + 23.333 us   |                                            }
+  726.955689 |   0)   a.out-922    |               |                                            ktime_get_with_offset() {
+  726.955692 |   0)   a.out-922    |   1.000 us    |                                              clocksource_mmio_readl_up();
+  726.955697 |   0)   a.out-922    |   6.667 us    |                                            }
+  726.955700 |   0)   a.out-922    |               |                                            packet_rcv() {
+  726.955704 |   0)   a.out-922    |   0.667 us    |                                              skb_push();
+  726.955709 |   0)   a.out-922    |               |                                              run_filter() {
+  726.955712 |   0)   a.out-922    |   0.667 us    |                                                __rcu_read_lock();
+  726.955717 |   0)   a.out-922    |               |                                                __bpf_prog_run32() {
+  726.955720 |   0)   a.out-922    |   4.667 us    |                                                  ___bpf_prog_run();
+  726.955729 |   0)   a.out-922    |   10.000 us   |                                                }
+  726.955731 |   0)   a.out-922    |   0.667 us    |                                                __rcu_read_unlock();
+  726.955736 |   0)   a.out-922    | + 25.333 us   |                                              }
+  726.955738 |   0)   a.out-922    |               |                                              consume_skb() {
+  726.955741 |   0)   a.out-922    |               |                                                skb_release_all() {
+  726.955744 |   0)   a.out-922    |   1.000 us    |                                                  skb_release_head_state();
+  726.955749 |   0)   a.out-922    |   1.333 us    |                                                  skb_release_data();
+  726.955755 |   0)   a.out-922    | + 11.000 us   |                                                }
+  726.955757 |   0)   a.out-922    |               |                                                kfree_skbmem() {
+  726.955759 |   0)   a.out-922    |   3.333 us    |                                                  kmem_cache_free();
+  726.955767 |   0)   a.out-922    |   8.000 us    |                                                }
+  726.955769 |   0)   a.out-922    | + 29.000 us   |                                              }
+  726.955772 |   0)   a.out-922    | + 69.333 us   |                                            }
+  726.955773 |   0)   a.out-922    |   1.000 us    |                                            __rcu_read_unlock();
+  726.955779 |   0)   a.out-922    | ! 126.667 us  |                                          }
+  726.955781 |   0)   a.out-922    |               |                                          fec_enet_start_xmit() {
+  726.955784 |   0)   a.out-922    |   1.000 us    |                                            fec_enet_clear_csum.constprop.10();
+  726.955792 |   0)   a.out-922    |               |                                            arm_dma_map_page() {
+  726.955795 |   0)   a.out-922    |               |                                              __dma_page_cpu_to_dev() {
+  726.955798 |   0)   a.out-922    |               |                                                dma_cache_maint_page() {
+  726.955801 |   0)   a.out-922    |   1.334 us    |                                                  page_address();
+  726.955807 |   0)   a.out-922    |   7.000 us    |                                                }
+  726.955809 |   0)   a.out-922    | + 12.000 us   |                                              }
+  726.955812 |   0)   a.out-922    | + 17.333 us   |                                            }
+  726.955815 |   0)   a.out-922    |   1.000 us    |                                            arm_dma_mapping_error();
+  726.955821 |   0)   a.out-922    |   0.667 us    |                                            page_address();
+  726.955827 |   0)   a.out-922    |               |                                            arm_dma_map_page() {
+  726.955829 |   0)   a.out-922    |               |                                              __dma_page_cpu_to_dev() {
+  726.955832 |   0)   a.out-922    |               |                                                dma_cache_maint_page() {
+  726.955834 |   0)   a.out-922    |   0.667 us    |                                                  page_address();
+  726.955840 |   0)   a.out-922    |   5.667 us    |                                                }
+  726.955842 |   0)   a.out-922    | + 10.333 us   |                                              }
+  726.955844 |   0)   a.out-922    | + 15.334 us   |                                            }
+  726.955846 |   0)   a.out-922    |   0.667 us    |                                            arm_dma_mapping_error();
+  726.955851 |   0)   a.out-922    |   0.667 us    |                                            arm_heavy_mb();
+  726.955857 |   0)   a.out-922    |   0.667 us    |                                            arm_heavy_mb();
+  726.955863 |   0)   a.out-922    |   0.667 us    |                                            arm_heavy_mb();
+  726.955867 |   0)   a.out-922    |   0.667 us    |                                            arm_heavy_mb();
+  726.955874 |   0)   a.out-922    | + 90.666 us   |                                          }
+  726.955876 |   0)   a.out-922    | ! 228.000 us  |                                        }
+  726.955878 |   0)   a.out-922    |               |                                        _raw_spin_unlock() {
+  726.955881 |   0)   a.out-922    |   1.000 us    |                                          preempt_count_sub();
+  726.955886 |   0)   a.out-922    |   6.000 us    |                                        }
+  726.955888 |   0)   a.out-922    |               |                                        _raw_spin_lock() {
+  726.955891 |   0)   a.out-922    |   0.667 us    |                                          preempt_count_add();
+  726.955897 |   0)   a.out-922    |   6.667 us    |                                        }
+  726.955899 |   0)   a.out-922    | ! 306.333 us  |                                      } /* sch_direct_xmit */
+  726.955902 |   0)   a.out-922    |               |                                      _raw_spin_unlock() {
+  726.955904 |   0)   a.out-922    |   0.667 us    |                                        preempt_count_sub();
+  726.955910 |   0)   a.out-922    |   5.667 us    |                                      }
+  726.955912 |   0)   a.out-922    |               |                                      __local_bh_enable_ip() {
+  726.955914 |   0)   a.out-922    |   0.667 us    |                                        preempt_count_sub();
+  726.955919 |   0)   a.out-922    |   1.000 us    |                                        preempt_count_sub();
+  726.955925 |   0)   a.out-922    | + 11.667 us   |                                      }
+  726.955928 |   0)   a.out-922    | ! 361.333 us  |                                    } /* __dev_queue_xmit */
+  726.955930 |   0)   a.out-922    | ! 366.666 us  |                                  } /* dev_queue_xmit */
+  726.955932 |   0)   a.out-922    |               |                                  __local_bh_enable_ip() {
+  726.955935 |   0)   a.out-922    |   0.667 us    |                                    preempt_count_sub();
+  726.955939 |   0)   a.out-922    |   0.667 us    |                                    preempt_count_sub();
+  726.955944 |   0)   a.out-922    | + 10.333 us   |                                  }
+  726.955947 |   0)   a.out-922    | ! 398.000 us  |                                } /* ip_finish_output2 */
+  726.955949 |   0)   a.out-922    | ! 409.333 us  |                              } /* ip_finish_output */
+  726.955952 |   0)   a.out-922    | ! 447.333 us  |                            } /* ip_output */
+  726.955955 |   0)   a.out-922    | ! 472.667 us  |                          } /* ip_local_out */
+  726.955957 |   0)   a.out-922    |   0.667 us    |                          __rcu_read_unlock();
+  726.955962 |   0)   a.out-922    | ! 505.666 us  |                        } /* ip_queue_xmit */
+  726.955964 |   0)   a.out-922    |   1.000 us    |                        tcp_rate_skb_sent();
+  726.955969 |   0)   a.out-922    | ! 564.667 us  |                      } /* __tcp_transmit_skb */
+  726.955971 |   0)   a.out-922    |               |                      tcp_event_new_data_sent() {
+  726.955975 |   0)   a.out-922    |               |                        tcp_rearm_rto() {
+  726.955977 |   0)   a.out-922    |               |                          tcp_rearm_rto.part.19() {
+  726.955981 |   0)   a.out-922    |   0.666 us    |                            jiffies_to_usecs();
+  726.955986 |   0)   a.out-922    |   0.666 us    |                            __usecs_to_jiffies();
+  726.955991 |   0)   a.out-922    |               |                            sk_reset_timer() {
+  726.955993 |   0)   a.out-922    |   1.333 us    |                              mod_timer();
+  726.955999 |   0)   a.out-922    |   6.000 us    |                            }
+  726.956001 |   0)   a.out-922    | + 22.000 us   |                          }
+  726.956004 |   0)   a.out-922    | + 27.000 us   |                        }
+  726.956006 |   0)   a.out-922    | + 32.333 us   |                      }
+  726.956009 |   0)   a.out-922    |   1.000 us    |                      tcp_chrono_stop();
+  726.956014 |   0)   a.out-922    |               |                      tcp_schedule_loss_probe() {
+  726.956017 |   0)   a.out-922    |   0.667 us    |                        __usecs_to_jiffies();
+  726.956021 |   0)   a.out-922    |   0.667 us    |                        jiffies_to_usecs();
+  726.956026 |   0)   a.out-922    |   0.667 us    |                        __usecs_to_jiffies();
+  726.956033 |   0)   a.out-922    |               |                        sk_reset_timer() {
+  726.956035 |   0)   a.out-922    |               |                          mod_timer() {
+  726.956038 |   0)   a.out-922    |               |                            lock_timer_base() {
+  726.956041 |   0)   a.out-922    |               |                              _raw_spin_lock_irqsave() {
+  726.956043 |   0)   a.out-922    |   0.667 us    |                                preempt_count_add();
+  726.956050 |   0)   a.out-922    |   7.333 us    |                              }
+  726.956053 |   0)   a.out-922    | + 12.666 us   |                            }
+  726.956055 |   0)   a.out-922    |   0.666 us    |                            calc_wheel_index();
+  726.956060 |   0)   a.out-922    |   1.333 us    |                            detach_if_pending();
+  726.956066 |   0)   a.out-922    |   1.000 us    |                            get_nohz_timer_target();
+  726.956072 |   0)   a.out-922    |   1.000 us    |                            enqueue_timer();
+  726.956078 |   0)   a.out-922    |   1.000 us    |                            trigger_dyntick_cpu();
+  726.956083 |   0)   a.out-922    |               |                            _raw_spin_unlock_irqrestore() {
+  726.956087 |   0)   a.out-922    |   0.667 us    |                              preempt_count_sub();
+  726.956092 |   0)   a.out-922    |   5.334 us    |                            }
+  726.956095 |   0)   a.out-922    | + 57.666 us   |                          }
+  726.956097 |   0)   a.out-922    | + 62.334 us   |                        }
+  726.956099 |   0)   a.out-922    | + 83.334 us   |                      }
+  726.956102 |   0)   a.out-922    | ! 721.000 us  |                    }
+  726.956105 |   0)   a.out-922    | ! 736.333 us  |                  }
+  726.956107 |   0)   a.out-922    |               |                  _raw_spin_unlock() {
+  726.956109 |   0)   a.out-922    |   0.667 us    |                    preempt_count_sub();
+  726.956114 |   0)   a.out-922    |   5.667 us    |                  }
+  726.956117 |   0)   a.out-922    |   1.000 us    |                  sk_free();
+  726.956122 |   0)   a.out-922    | ! 767.333 us  |                }
+  726.956124 |   0)   a.out-922    | ! 774.667 us  |              }
+  726.956127 |   0)   a.out-922    |   0.666 us    |              rcu_bh_qs();
+  726.956132 |   0)   a.out-922    |               |              __local_bh_enable() {
+  726.956135 |   0)   a.out-922    |   1.000 us    |                preempt_count_sub();
+  726.956140 |   0)   a.out-922    |   5.666 us    |              }
+  726.956143 |   0)   a.out-922    | ! 919.333 us  |            }
+  726.956145 |   0)   a.out-922    |   0.666 us    |            idle_cpu();
+  726.956150 |   0)   a.out-922    |   0.666 us    |            rcu_irq_exit();
+  726.956155 |   0)   a.out-922    | ! 946.667 us  |          }
+  726.956158 |   0)   a.out-922    | # 1113.333 us |        }
+  726.956160 |   0)   a.out-922    | # 1592.333 us |      }
+  726.956160 |   0)   a.out-922    |   <========== |
+  726.956162 |   0)   a.out-922    |   0.667 us    |      preempt_count_sub();
+  726.956169 |   0)   a.out-922    | # 1605.000 us |    }
+  726.956172 |   0)   a.out-922    | # 1644.333 us |  }

@@ -1,0 +1,422 @@
+# tracer: function_graph
+#
+# CPU  DURATION                  FUNCTION CALLS
+# |     |   |                     |   |   |   |
+ 0)               |  uart_open() {
+ 0)               |    tty_port_open() {
+ 0)               |      _raw_spin_lock_irq() {
+ 0)   1.667 us    |        preempt_count_add();
+ 0) + 10.333 us   |      }
+ 0)               |      _raw_spin_unlock_irq() {
+ 0)   1.000 us    |        preempt_count_sub();
+ 0)   7.667 us    |      }
+ 0)               |      tty_port_tty_set() {
+ 0)               |        _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |          preempt_count_add();
+ 0)   7.667 us    |        }
+ 0)   1.334 us    |        tty_kref_put();
+ 0)               |        _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |          preempt_count_sub();
+ 0)   7.666 us    |        }
+ 0) + 36.333 us   |      }
+ 0)   1.000 us    |      mutex_lock();
+ 0)               |      uart_port_activate() {
+ 0)               |        uart_startup.part.4() {
+ 0)               |          get_zeroed_page() {
+ 0)               |            __get_free_pages() {
+ 0)               |              __alloc_pages_nodemask() {
+ 0)               |                get_page_from_freelist() {
+ 0)               |                  kmap_atomic() {
+ 0)   1.000 us    |                    preempt_count_add();
+ 0)   1.000 us    |                    page_address();
+ 0) + 15.000 us   |                  }
+ 0)               |                  __kunmap_atomic() {
+ 0)   1.000 us    |                    preempt_count_sub();
+ 0)   8.333 us    |                  }
+ 0) + 40.333 us   |                }
+ 0) + 47.667 us   |              }
+ 0)   1.000 us    |              page_address();
+ 0) + 62.000 us   |            }
+ 0) + 68.667 us   |          }
+ 0)               |          _raw_spin_lock_irqsave() {
+ 0)   2.334 us    |            preempt_count_add();
+ 0)   9.666 us    |          }
+ 0)               |          _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |            preempt_count_sub();
+ 0)   8.333 us    |          }
+ 0)               |          imx_startup() {
+ 0)               |            printk() {
+ 0)               |              vprintk_func() {
+ 0)               |                vprintk_default() {
+ 0)               |                  vprintk_emit() {
+ 0)   1.333 us    |                    __printk_safe_enter();
+ 0)               |                    _raw_spin_lock() {
+ 0)   1.334 us    |                      preempt_count_add();
+ 0)   8.333 us    |                    }
+ 0)               |                    vprintk_store() {
+ 0)               |                      log_store() {
+ 0)   2.333 us    |                        log_make_free_space();
+ 0) + 13.000 us   |                      }
+ 0) + 26.333 us   |                    }
+ 0)               |                    _raw_spin_unlock() {
+ 0)   1.000 us    |                      preempt_count_sub();
+ 0)   7.666 us    |                    }
+ 0)   0.667 us    |                    __printk_safe_exit();
+ 0)               |                    console_trylock() {
+ 0)               |                      __down_trylock_console_sem.constprop.11() {
+ 0)   0.667 us    |                        __printk_safe_enter();
+ 0)               |                        down_trylock() {
+ 0)               |                          _raw_spin_lock_irqsave() {
+ 0)   1.333 us    |                            preempt_count_add();
+ 0)   7.667 us    |                          }
+ 0)               |                          _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                            preempt_count_sub();
+ 0)   7.666 us    |                          }
+ 0) + 27.667 us   |                        }
+ 0)   0.667 us    |                        __printk_safe_exit();
+ 0) + 47.667 us   |                      }
+ 0) + 56.000 us   |                    }
+ 0)               |                    console_unlock() {
+ 0)   0.667 us    |                      __printk_safe_enter();
+ 0)               |                      _raw_spin_lock() {
+ 0)   1.000 us    |                        preempt_count_add();
+ 0)               |                      __down_trylock_console_sem.constprop.11() {
+ 0)   0.667 us    |                        __printk_safe_enter();
+ 0)               |                        down_trylock() {
+ 0)               |                          _raw_spin_lock_irqsave() {
+ 0)   1.333 us    |                            preempt_count_add();
+ 0)   7.667 us    |                          }
+ 0)               |                          _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                            preempt_count_sub();
+ 0)   7.666 us    |                          }
+ 0) + 27.667 us   |                        }
+ 0)   0.667 us    |                        __printk_safe_exit();
+ 0) + 47.667 us   |                      }
+ 0) + 56.000 us   |                    } /* console_trylock */
+ 0)               |                    console_unlock() {
+ 0)   0.667 us    |                      __printk_safe_enter();
+ 0)               |                      _raw_spin_lock() {
+ 0)   1.000 us    |                        preempt_count_add();
+ 0)   7.667 us    |                      }
+ 0)               |                      msg_print_text() {
+ 0)   2.000 us    |                        print_prefix();
+ 0)   1.333 us    |                        print_prefix();
+ 0) + 17.000 us   |                      }
+ 0)               |                      _raw_spin_unlock() {
+ 0)   1.000 us    |                        preempt_count_sub();
+ 0)   7.667 us    |                      }
+ 0)   0.666 us    |                      __printk_safe_exit();
+ 0)   0.667 us    |                      __printk_safe_enter();
+ 0)               |                      _raw_spin_lock() {
+ 0)   1.000 us    |                        preempt_count_add();
+ 0)   7.667 us    |                      }
+ 0)               |                      _raw_spin_unlock() {
+ 0)   1.000 us    |                        preempt_count_sub();
+ 0)   7.666 us    |                      }
+ 0)               |                      __up_console_sem.constprop.12() {
+ 0)   1.000 us    |                        __printk_safe_enter();
+ 0)               |                        up() {
+ 0)               |                          _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |                            preempt_count_add();
+ 0)   7.333 us    |                          }
+ 0)               |                          _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                            preempt_count_sub();
+ 0)   7.667 us    |                          }
+ 0) + 28.667 us   |                        }
+ 0)   1.000 us    |                        __printk_safe_exit();
+ 0) + 48.666 us   |                      }
+ 0)               |                      _raw_spin_lock() {
+ 0)   1.333 us    |                        preempt_count_add();
+ 0)   7.666 us    |                      }
+ 0)               |                      _raw_spin_unlock() {
+ 0)   1.000 us    |                        preempt_count_sub();
+ 0)   9.333 us    |                      }
+ 0)   0.667 us    |                      __printk_safe_exit();
+ 0)               |                      wake_up_klogd() {
+ 0)   1.000 us    |                        preempt_count_add();
+ 0)   1.000 us    |                        preempt_count_add();
+ 0)   1.000 us    |                        tick_nohz_tick_stopped();
+ 0)   1.000 us    |                        preempt_count_sub();
+ 0)   1.000 us    |                        preempt_count_sub();
+ 0) + 38.333 us   |                      }
+ 0) ! 244.000 us  |                    }
+ 0) ! 388.334 us  |                  }
+ 0) ! 395.667 us  |                }
+ 0) ! 403.667 us  |              }
+ 0) ! 411.000 us  |            }
+ 0)               |            device_reset() {
+ 0)               |              __reset_control_get() {
+ 0)               |                __of_reset_control_get() {
+ 0)               |                  of_parse_phandle_with_args() {
+ 0)               |                    __of_parse_phandle_with_args() {
+ 0)               |                      of_phandle_iterator_init() {
+ 0)               |                        of_find_property() {
+ 0)               |                          _raw_spin_lock_irqsave() {
+ 0)   1.333 us    |                            preempt_count_add();
+ 0)   8.000 us    |                          }
+ 0)   4.000 us    |                          __of_find_property();
+ 0)               |                          _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                            preempt_count_sub();
+ 0)   7.667 us    |                          }
+ 0) + 37.667 us   |                        }
+ 0) + 45.000 us   |                      }
+ 0)   1.667 us    |                      of_phandle_iterator_next();
+ 0) + 59.667 us   |                    }
+ 0) + 66.333 us   |                  }
+ 0) + 75.000 us   |                }
+ 0) + 81.666 us   |              }
+ 0) + 90.000 us   |            }
+ 0)               |            clk_prepare() {
+ 0)               |              clk_prepare_lock() {
+ 0)   1.667 us    |                mutex_trylock();
+ 0) + 10.667 us   |              }
+ 0)               |              clk_core_prepare() {
+ 0)               |                clk_core_prepare() {
+ 0)               |                  clk_core_prepare() {
+ 0)               |                    clk_core_prepare() {
+ 0)   1.333 us    |                      clk_core_prepare();
+ 0)   9.667 us    |                    }
+ 0) + 17.000 us   |                  }
+ 0) + 24.000 us   |                }
+ 0) + 31.333 us   |              }
+ 0)               |              clk_prepare_unlock() {
+ 0)   1.000 us    |                mutex_unlock();
+ 0)   7.667 us    |              }
+ 0) + 69.333 us   |            }
+ 0)               |            clk_enable() {
+ 0)               |              clk_core_enable_lock() {
+ 0)               |                clk_enable_lock() {
+ 0)               |                  _raw_spin_trylock() {
+ 0)   1.000 us    |                    preempt_count_add();
+ 0)   9.334 us    |                  }
+ 0) + 16.666 us   |                }
+ 0)               |                clk_core_enable() {
+ 0)               |                  clk_core_enable() {
+ 0)               |                    clk_core_enable() {
+ 0)               |                      clk_core_enable() {
+ 0)   1.000 us    |                        clk_core_enable();
+ 0)   8.000 us    |                      }
+ 0) + 14.667 us   |                    }
+ 0)   1.333 us    |                    clk_divider_enable();
+ 0) + 28.666 us   |                  }
+ 0)               |                  clk_gate2_enable() {
+ 0)               |                    _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |                      preempt_count_add();
+ 0)   7.334 us    |                    }
+ 0)               |                    clk_gate2_do_shared_clks() {
+ 0)   1.333 us    |                      imx_src_is_m4_enabled();
+ 0)   2.667 us    |                      arm_heavy_mb();
+ 0) + 16.667 us   |                    }
+ 0)               |                    _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                      preempt_count_sub();
+ 0)   7.334 us    |                    }
+ 0) + 50.667 us   |                  }
+ 0) + 92.000 us   |                }
+ 0)               |                clk_enable_unlock() {
+ 0)               |                  _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                    preempt_count_sub();
+ 0)   7.666 us    |                  }
+ 0) + 15.666 us   |                }
+ 0) ! 142.333 us  |              }
+ 0) ! 149.333 us  |            }
+ 0)               |            clk_prepare() {
+ 0)               |              clk_prepare_lock() {
+ 0)   1.000 us    |                mutex_trylock();
+ 0)   7.667 us    |              }
+ 0)               |              clk_core_prepare() {
+ 0)   1.000 us    |                clk_core_prepare();
+ 0)   8.000 us    |              }
+ 0)               |              clk_prepare_unlock() {
+ 0)   1.000 us    |                mutex_unlock();
+ 0)   7.666 us    |              }
+ 0) + 42.333 us   |            }
+ 0)               |            clk_enable() {
+ 0)               |              clk_core_enable_lock() {
+ 0)               |                clk_enable_lock() {
+ 0)               |                  _raw_spin_trylock() {
+ 0)   1.333 us    |                    preempt_count_add();
+ 0)   7.666 us    |                  }
+ 0) + 17.333 us   |                }
+ 0)               |                clk_core_enable() {
+ 0)   1.000 us    |                  clk_core_enable();
+ 0)               |                  clk_gate2_enable() {
+ 0)               |                    _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |                      preempt_count_add();
+ 0)   7.334 us    |                    }
+ 0)               |                    clk_gate2_do_shared_clks() {
+ 0)   1.000 us    |                      imx_src_is_m4_enabled();
+ 0)   1.000 us    |                      arm_heavy_mb();
+ 0) + 14.000 us   |                    }
+ 0)               |                    _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                      preempt_count_sub();
+ 0)   8.667 us    |                    }
+ 0) + 48.000 us   |                  }
+ 0) + 63.000 us   |                }
+ 0)               |                clk_enable_unlock() {
+ 0)               |                  _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                    preempt_count_sub();
+ 0)   7.667 us    |                  }
+ 0) + 15.334 us   |                }
+ 0) ! 113.000 us  |              }
+ 0) ! 119.667 us  |            }
+ 0)               |            imx_setup_ufcr.constprop.2() {
+ 0)   1.000 us    |              arm_heavy_mb();
+ 0)   8.000 us    |            }
+ 0)   1.000 us    |            arm_heavy_mb();
+ 0)   1.000 us    |            arm_heavy_mb();
+ 0)               |            dma_request_slave_channel() {
+ 0)               |              dma_request_chan() {
+ 0)               |                of_dma_request_slave_channel() {
+ 0)               |                  of_find_property() {
+ 0)               |                    _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |                      preempt_count_add();
+ 0)   7.333 us    |                    }
+ 0)   2.000 us    |                    __of_find_property();
+ 0)               |                    _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                      preempt_count_sub();
+ 0)   7.667 us    |                    }
+ 0) + 36.334 us   |                  }
+ 0) + 44.333 us   |                }
+ 0)   1.000 us    |                mutex_lock();
+ 0)   1.000 us    |                mutex_unlock();
+ 0) + 68.000 us   |              }
+ 0) + 75.000 us   |            }
+ 0)   2.000 us    |            imx_uart_dma_exit();
+ 0)               |            _raw_spin_lock_irqsave() {
+ 0)   1.333 us    |              preempt_count_add();
+ 0)   7.666 us    |            }
+ 0)   1.000 us    |            arm_heavy_mb();
+ 0)   1.000 us    |            arm_heavy_mb();
+ 0)   1.000 us    |            arm_heavy_mb();
+ 0)   0.667 us    |            arm_heavy_mb();
+ 0)   1.000 us    |            arm_heavy_mb();
+ 0)   1.000 us    |            arm_heavy_mb();
+ 0)               |            imx_enable_ms() {
+ 0)               |              mod_timer() {
+ 0)               |                lock_timer_base() {
+ 0)               |                  _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |                    preempt_count_add();
+ 0)   7.666 us    |                  }
+ 0) + 14.667 us   |                }
+ 0)   1.334 us    |                detach_if_pending();
+ 0)   1.333 us    |                get_nohz_timer_target();
+ 0)               |                __internal_add_timer() {
+ 0)   1.666 us    |                  calc_wheel_index();
+ 0)   1.667 us    |                  enqueue_timer();
+ 0) + 15.667 us   |                }
+ 0)   1.334 us    |                trigger_dyntick_cpu();
+ 0)               |                _raw_spin_unlock_irqrestore() {
+ 0)   1.333 us    |                  preempt_count_sub();
+ 0)   8.000 us    |                }
+ 0) + 80.333 us   |              }
+ 0)               |              mctrl_gpio_enable_ms() {
+ 0)   2.000 us    |                mctrl_gpio_get();
+ 0)   9.333 us    |              }
+ 0) ! 103.666 us  |            }
+ 0)               |            _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |              preempt_count_sub();
+ 0)   8.666 us    |            }
+ 0) # 1219.000 us |          }
+ 0)               |          uart_change_speed() {
+ 0)               |            imx_set_termios() {
+ 0)               |              del_timer_sync() {
+ 0)               |                try_to_del_timer_sync() {
+ 0)               |                  lock_timer_base() {
+ 0)               |                    _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |                      preempt_count_add();
+ 0)   7.666 us    |                    }
+ 0) + 14.667 us   |                  }
+ 0)   2.334 us    |                  detach_if_pending();
+ 0)               |                  _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                    preempt_count_sub();
+ 0)   7.667 us    |                  }
+ 0) + 42.333 us   |                }
+ 0) + 49.667 us   |              }
+ 0)               |              uart_get_baud_rate() {
+ 0)   1.000 us    |                tty_termios_baud_rate();
+ 0) + 12.666 us   |              }
+ 0)   1.000 us    |              uart_get_divisor();
+ 0)               |              _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |                preempt_count_add();
+ 0)   7.667 us    |              }
+ 0)   1.000 us    |              uart_update_timeout();
+ 0)   1.000 us    |              arm_heavy_mb();
+ 0)   1.000 us    |              arm_heavy_mb();
+ 0)   3.667 us    |              tty_termios_encode_baud_rate();
+ 0)   1.000 us    |              arm_heavy_mb();
+ 0)   1.000 us    |              arm_heavy_mb();
+ 0)   1.000 us    |              arm_heavy_mb();
+ 0)   1.000 us    |              arm_heavy_mb();
+ 0)   1.000 us    |              arm_heavy_mb();
+ 0)   0.667 us    |              arm_heavy_mb();
+ 0)   1.000 us    |              arm_heavy_mb();
+ 0)               |              _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                preempt_count_sub();
+ 0)   7.333 us    |              }
+ 0) ! 193.000 us  |            }
+ 0)               |            _raw_spin_lock_irq() {
+ 0)   1.000 us    |              preempt_count_add();
+ 0)   8.000 us    |            }
+ 0)               |            _raw_spin_unlock_irq() {
+ 0)   1.000 us    |              preempt_count_sub();
+ 0)   9.000 us    |            }
+ 0) ! 229.666 us  |          }
+ 0) # 1571.000 us |        }
+ 0) # 1580.000 us |      }
+ 0)   1.000 us    |      mutex_unlock();
+ 0)               |      tty_port_block_til_ready() {
+ 0)               |        _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |          preempt_count_add();
+ 0)   7.333 us    |        }
+ 0)               |        _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |          preempt_count_sub();
+ 0)   7.667 us    |        }
+ 0)               |        uart_dtr_rts() {
+ 0)               |          uart_port_dtr_rts() {
+ 0)               |            uart_update_mctrl() {
+ 0)               |              _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |                preempt_count_add();
+ 0)   7.667 us    |              }
+ 0)               |              imx_set_mctrl() {
+ 0)   1.000 us    |                arm_heavy_mb();
+ 0)   1.000 us    |                arm_heavy_mb();
+ 0)   1.000 us    |                arm_heavy_mb();
+ 0)               |                mctrl_gpio_set() {
+ 0)               |                  gpiod_set_array_value() {
+ 0)   1.333 us    |                    gpiod_set_array_value_complex();
+ 0)   8.333 us    |                  }
+ 0) + 17.000 us   |                }
+ 0) + 45.667 us   |              }
+ 0)               |              _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |                preempt_count_sub();
+ 0)   7.667 us    |              }
+ 0) + 79.333 us   |            }
+ 0) + 86.667 us   |          }
+ 0) + 94.000 us   |        }
+ 0)               |        prepare_to_wait() {
+ 0)               |          _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |            preempt_count_add();
+ 0)   7.667 us    |          }
+ 0)               |          _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |            preempt_count_sub();
+ 0)   7.667 us    |          }
+ 0) + 28.333 us   |        }
+ 0)   1.000 us    |        tty_hung_up_p();
+ 0)               |        finish_wait() {
+ 0)               |          _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |            preempt_count_add();
+ 0)   7.667 us    |          }
+ 0)               |          _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |            preempt_count_sub();
+ 0)   8.666 us    |          }
+ 0) + 28.666 us   |        }
+ 0)               |        _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |          preempt_count_add();
+ 0)   7.333 us    |        }
+ 0)   1.000 us    |        tty_hung_up_p();
+ 0)               |        _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |          preempt_count_sub();
+ 0)   7.334 us    |        }
+ 0) ! 241.000 us  |      }
+ 0) # 1922.333 us |    }
+ 0) # 1932.000 us |  }

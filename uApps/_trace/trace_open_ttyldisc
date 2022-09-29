@@ -1,0 +1,125 @@
+# tracer: function_graph
+#
+# CPU  DURATION                  FUNCTION CALLS
+# |     |   |                     |   |   |   |
+ 0)               |  tty_ldisc_open() {
+ 0)               |    n_tty_open() {
+ 0)               |      vzalloc() {
+ 0)               |        __vmalloc_node.constprop.11() {
+ 0)               |          __vmalloc_node_range() {
+ 0)               |            __get_vm_area_node() {
+ 0)               |              kmem_cache_alloc_trace() {
+ 0)   1.000 us    |                memcg_kmem_put_cache();
+ 0) + 10.333 us   |              }
+ 0)               |              alloc_vmap_area.constprop.14() {
+ 0)               |                kmem_cache_alloc_trace() {
+ 0)   1.000 us    |                  memcg_kmem_put_cache();
+ 0)   8.667 us    |                }
+ 0)               |                _raw_spin_lock() {
+ 0)   1.334 us    |                  preempt_count_add();
+ 0)   8.667 us    |                }
+ 0)   6.000 us    |                __insert_vmap_area();
+ 0)               |                _raw_spin_unlock() {
+ 0)   1.000 us    |                  preempt_count_sub();
+ 0)   8.000 us    |                }
+ 0) + 59.000 us   |              }
+ 0)               |              _raw_spin_lock() {
+ 0)   1.000 us    |                preempt_count_add();
+ 0)   7.667 us    |              }
+ 0)               |              _raw_spin_unlock() {
+ 0)   1.000 us    |                preempt_count_sub();
+ 0)   8.000 us    |              }
+ 0) ! 110.000 us  |            }
+ 0)               |            __kmalloc() {
+ 0)   1.334 us    |              kmalloc_slab();
+ 0)   1.000 us    |              memcg_kmem_put_cache();
+ 0) + 17.333 us   |            }
+ 0)               |            __alloc_pages_nodemask() {
+ 0)               |              get_page_from_freelist() {
+ 0)               |                kmap_atomic() {
+ 0)   1.333 us    |                  preempt_count_add();
+ 0)   1.334 us    |                  page_address();
+ 0) + 15.334 us   |                }
+ 0)               |                __kunmap_atomic() {
+ 0)   2.334 us    |                  preempt_count_sub();
+ 0)   9.667 us    |                }
+ 0) + 44.666 us   |              }
+ 0) + 53.666 us   |            }
+ 0)               |            __alloc_pages_nodemask() {
+ 0)               |              get_page_from_freelist() {
+ 0)               |                kmap_atomic() {
+ 0)   1.000 us    |                  preempt_count_add();
+ 0)   1.000 us    |                  page_address();
+ 0) + 14.000 us   |                }
+ 0)               |                __kunmap_atomic() {
+ 0)   1.000 us    |                  preempt_count_sub();
+ 0)   9.333 us    |                }
+ 0) + 40.334 us   |              }
+ 0) + 48.000 us   |            }
+ 0)               |            __alloc_pages_nodemask() {
+ 0)               |              get_page_from_freelist() {
+ 0)               |                kmap_atomic() {
+ 0)   1.000 us    |                  preempt_count_add();
+ 0)   1.000 us    |                  page_address();
+ 0) + 15.333 us   |                }
+ 0)               |                __kunmap_atomic() {
+ 0)   1.000 us    |                  preempt_count_sub();
+ 0)   8.000 us    |                }
+ 0) + 40.333 us   |              }
+ 0) + 48.333 us   |            }
+ 0)               |            map_vm_area() {
+ 0)   4.000 us    |              vmap_page_range_noflush();
+ 0) + 12.000 us   |            }
+ 0) ! 329.333 us  |          }
+ 0) ! 338.667 us  |        }
+ 0) ! 345.666 us  |      }
+ 0)   1.000 us    |      __mutex_init();
+ 0)   1.000 us    |      __mutex_init();
+ 0)               |      n_tty_set_termios() {
+ 0)               |        __wake_up() {
+ 0)               |          __wake_up_common_lock() {
+ 0)               |            _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |              preempt_count_add();
+ 0)   7.667 us    |            }
+ 0)   1.333 us    |            __wake_up_common();
+ 0)               |            _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |              preempt_count_sub();
+ 0)   9.000 us    |            }
+ 0)               |            map_vm_area() {
+ 0)   4.000 us    |              vmap_page_range_noflush();
+ 0) + 12.000 us   |            }
+ 0) ! 329.333 us  |          } /* __vmalloc_node_range */
+ 0) ! 338.667 us  |        } /* __vmalloc_node.constprop.11 */
+ 0) ! 345.666 us  |      } /* vzalloc */
+ 0)   1.000 us    |      __mutex_init();
+ 0)   1.000 us    |      __mutex_init();
+ 0)               |      n_tty_set_termios() {
+ 0)               |        __wake_up() {
+ 0)               |          __wake_up_common_lock() {
+ 0)               |            _raw_spin_lock_irqsave() {
+ 0)   1.000 us    |              preempt_count_add();
+ 0)   7.667 us    |            }
+ 0)   1.333 us    |            __wake_up_common();
+ 0)               |            _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |              preempt_count_sub();
+ 0)   9.000 us    |            }
+ 0) + 36.667 us   |          }
+ 0) + 43.333 us   |        }
+ 0)               |        __wake_up() {
+ 0)               |          __wake_up_common_lock() {
+ 0)               |            _raw_spin_lock_irqsave() {
+ 0)   1.333 us    |              preempt_count_add();
+ 0)   7.666 us    |            }
+ 0)   1.333 us    |            __wake_up_common();
+ 0)               |            _raw_spin_unlock_irqrestore() {
+ 0)   1.000 us    |              preempt_count_sub();
+ 0)   7.667 us    |            }
+ 0) + 33.667 us   |          }
+ 0) + 40.333 us   |        }
+ 0) ! 101.334 us  |      }
+ 0)               |      tty_unthrottle() {
+ 0)   1.000 us    |        down_write();
+ 0)   1.667 us    |        up_write();
+ 0) + 15.667 us   |      }
+ 0) ! 497.334 us  |    }
+ 0) ! 506.334 us  |  }

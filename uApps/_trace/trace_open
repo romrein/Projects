@@ -1,0 +1,441 @@
+# tracer: function_graph
+#
+#     TIME        CPU  TASK/PID         DURATION                  FUNCTION CALLS
+#      |          |     |    |           |   |                     |   |   |   |
+  629.012179 |   0)   a.out-905    |               |  uart_open() {
+  629.012193 |   0)   a.out-905    |               |    tty_port_open() {
+  629.012197 |   0)   a.out-905    |               |      _raw_spin_lock_irq() {
+  629.012199 |   0)   a.out-905    |   1.333 us    |        preempt_count_add();
+  629.012206 |   0)   a.out-905    |   7.667 us    |      }
+  629.012209 |   0)   a.out-905    |               |      _raw_spin_unlock_irq() {
+  629.012211 |   0)   a.out-905    |   1.000 us    |        preempt_count_sub();
+  629.012217 |   0)   a.out-905    |   5.667 us    |      }
+  629.012219 |   0)   a.out-905    |               |      tty_port_tty_set() {
+  629.012222 |   0)   a.out-905    |               |        _raw_spin_lock_irqsave() {
+  629.012224 |   0)   a.out-905    |   0.667 us    |          preempt_count_add();
+  629.012229 |   0)   a.out-905    |   5.667 us    |        }
+  629.012231 |   0)   a.out-905    |   1.000 us    |        tty_kref_put();
+  629.012236 |   0)   a.out-905    |               |        _raw_spin_unlock_irqrestore() {
+  629.012239 |   0)   a.out-905    |   0.666 us    |          preempt_count_sub();
+  629.012244 |   0)   a.out-905    |   5.667 us    |        }
+  629.012247 |   0)   a.out-905    | + 25.333 us   |      }
+  629.012248 |   0)   a.out-905    |   0.667 us    |      mutex_lock();
+  629.012255 |   0)   a.out-905    |               |      uart_port_activate() {
+  629.012258 |   0)   a.out-905    |               |        uart_startup.part.4() {
+  629.012262 |   0)   a.out-905    |               |          get_zeroed_page() {
+  629.012264 |   0)   a.out-905    |               |            __get_free_pages() {
+  629.012267 |   0)   a.out-905    |               |              __alloc_pages_nodemask() {
+  629.012269 |   0)   a.out-905    |               |                get_page_from_freelist() {
+  629.012272 |   0)   a.out-905    |               |                  kmap_atomic() {
+  629.012275 |   0)   a.out-905    |   0.666 us    |                    preempt_count_add();
+  629.012280 |   0)   a.out-905    |   0.666 us    |                    page_address();
+  629.012285 |   0)   a.out-905    | + 11.000 us   |                  }
+  629.012289 |   0)   a.out-905    |               |                  __kunmap_atomic() {
+  629.012292 |   0)   a.out-905    |   0.667 us    |                    preempt_count_sub();
+  629.012298 |   0)   a.out-905    |   6.334 us    |                  }
+  629.012301 |   0)   a.out-905    | + 29.000 us   |                }
+  629.012303 |   0)   a.out-905    | + 34.667 us   |              }
+  629.012306 |   0)   a.out-905    |   0.666 us    |              page_address();
+  629.012311 |   0)   a.out-905    | + 45.000 us   |            }
+  629.012314 |   0)   a.out-905    | + 49.667 us   |          }
+  629.012316 |   0)   a.out-905    |               |          _raw_spin_lock_irqsave() {
+  629.012319 |   0)   a.out-905    |   1.000 us    |            preempt_count_add();
+  629.012325 |   0)   a.out-905    |   6.000 us    |          }
+  629.012327 |   0)   a.out-905    |               |          free_pages() {
+  629.012330 |   0)   a.out-905    |               |            free_pages.part.5() {
+  629.012333 |   0)   a.out-905    |               |              __free_pages() {
+  629.012336 |   0)   a.out-905    |               |                free_hot_cold_page() {
+  629.012340 |   0)   a.out-905    |   1.000 us    |                  page_address();
+  629.012346 |   0)   a.out-905    |   0.667 us    |                  page_address();
+  629.012352 |   0)   a.out-905    | + 13.667 us   |                }
+  629.012355 |   0)   a.out-905    | + 20.000 us   |              }
+  629.012357 |   0)   a.out-905    | + 24.667 us   |            }
+  629.012360 |   0)   a.out-905    | + 30.333 us   |          }
+67 us   |            }
+  629.012322 |   0)   a.out-905    |   1.000 us    |            } /* preempt_count_add */
+  629.012325 |   0)   a.out-905    |   6.000 us    |          } /* _raw_spin_lock_irqsave */
+  629.012327 |   0)   a.out-905    |               |          free_pages() {
+  629.012330 |   0)   a.out-905    |               |            free_pages.part.5() {
+  629.012333 |   0)   a.out-905    |               |              __free_pages() {
+  629.012336 |   0)   a.out-905    |               |                free_hot_cold_page() {
+  629.012340 |   0)   a.out-905    |   1.000 us    |                  page_address();
+  629.012346 |   0)   a.out-905    |   0.667 us    |                  page_address();
+  629.012352 |   0)   a.out-905    | + 13.667 us   |                }
+  629.012355 |   0)   a.out-905    | + 20.000 us   |              }
+  629.012357 |   0)   a.out-905    | + 24.667 us   |            }
+  629.012360 |   0)   a.out-905    | + 30.333 us   |          }
+  629.012363 |   0)   a.out-905    |               |          _raw_spin_unlock_irqrestore() {
+  629.012365 |   0)   a.out-905    |   0.667 us    |            preempt_count_sub();
+  629.012371 |   0)   a.out-905    |   6.000 us    |          }
+  629.012375 |   0)   a.out-905    |               |          imx_startup() {
+  629.012379 |   0)   a.out-905    |               |            printk() {
+  629.012382 |   0)   a.out-905    |               |              vprintk_func() {
+  629.012386 |   0)   a.out-905    |               |                vprintk_default() {
+  629.012389 |   0)   a.out-905    |               |                  vprintk_emit() {
+  629.012392 |   0)   a.out-905    |   0.667 us    |                    __printk_safe_enter();
+  629.012398 |   0)   a.out-905    |               |                    _raw_spin_lock() {
+  629.012400 |   0)   a.out-905    |   0.667 us    |                      preempt_count_add();
+  629.012406 |   0)   a.out-905    |   6.000 us    |                    }
+  629.012409 |   0)   a.out-905    |               |                    vprintk_store() {
+  629.012416 |   0)   a.out-905    |               |                      log_store() {
+  629.012419 |   0)   a.out-905    |   2.333 us    |                        log_make_free_space();
+  629.012429 |   0)   a.out-905    | + 10.667 us   |                      }
+  629.012431 |   0)   a.out-905    | + 20.333 us   |                    }
+  629.012433 |   0)   a.out-905    |               |                    _raw_spin_unlock() {
+  629.012436 |   0)   a.out-905    |   1.000 us    |                      preempt_count_sub();
+  629.012441 |   0)   a.out-905    |   5.333 us    |                    }
+  629.012443 |   0)   a.out-905    |   1.000 us    |                    __printk_safe_exit();
+  629.012448 |   0)   a.out-905    |               |                    console_trylock() {
+  629.012451 |   0)   a.out-905    |               |                      __down_trylock_console_sem.constprop.11() {
+  629.012454 |   0)   a.out-905    |   0.666 us    |                        __printk_safe_enter();
+  629.012459 |   0)   a.out-905    |               |                        down_trylock() {
+  629.012462 |   0)   a.out-905    |               |                          _raw_spin_lock_irqsave() {
+  629.012464 |   0)   a.out-905    |   1.000 us    |                            preempt_count_add();
+  629.012470 |   0)   a.out-905    |   5.667 us    |                          }
+  629.012472 |   0)   a.out-905    |               |                          _raw_spin_unlock_irqrestore() {
+  629.012474 |   0)   a.out-905    |   1.000 us    |                            preempt_count_sub();
+  629.012479 |   0)   a.out-905    |   5.667 us    |                          }
+  629.012482 |   0)   a.out-905    | + 20.666 us   |                        }
+  629.012484 |   0)   a.out-905    |   0.667 us    |                        __printk_safe_exit();
+  629.012489 |   0)   a.out-905    | + 34.667 us   |                      }
+  629.012491 |   0)   a.out-905    | + 40.667 us   |                    }
+  629.012493 |   0)   a.out-905    |               |                    console_unlock() {
+  629.012496 |   0)   a.out-905    |   0.667 us    |                      __printk_safe_enter();
+  629.012501 |   0)   a.out-905    |               |                      _raw_spin_lock() {
+  629.012504 |   0)   a.out-905    |   1.000 us    |                        preempt_count_add();
+  629.012509 |   0)   a.out-905    |   5.666 us    |                      }
+  629.012512 |   0)   a.out-905    |               |                      msg_print_text() {
+  629.012515 |   0)   a.out-905    |   2.000 us    |                        print_prefix();
+  629.012521 |   0)   a.out-905    |   1.000 us    |                        print_prefix();
+  629.012527 |   0)   a.out-905    | + 12.666 us   |                      }
+  629.012529 |   0)   a.out-905    |               |                      _raw_spin_unlock() {
+  629.012532 |   0)   a.out-905    |   0.667 us    |                        preempt_count_sub();
+  629.012538 |   0)   a.out-905    |   7.000 us    |                      }
+  629.012541 |   0)   a.out-905    |   0.667 us    |                      __printk_safe_exit();
+  629.012546 |   0)   a.out-905    |   0.667 us    |                      __printk_safe_enter();
+  629.012550 |   0)   a.out-905    |               |                      _raw_spin_lock() {
+  629.012553 |   0)   a.out-905    |   1.000 us    |                        preempt_count_add();
+  629.012558 |   0)   a.out-905    |   5.333 us    |                      }
+  629.012560 |   0)   a.out-905    |               |                      _raw_spin_unlock() {
+  629.012563 |   0)   a.out-905    |   1.000 us    |                        preempt_count_sub();
+  629.012569 |   0)   a.out-905    |   6.667 us    |                      }
+  629.012571 |   0)   a.out-905    |               |                      __up_console_sem.constprop.12() {
+  629.012574 |   0)   a.out-905    |   0.667 us    |                        __printk_safe_enter();
+  629.012584 |   0)   a.out-905    |               |                        up() {
+  629.012587 |   0)   a.out-905    |               |                          _raw_spin_lock_irqsave() {
+  629.012589 |   0)   a.out-905    |   1.000 us    |                            preempt_count_add();
+  629.012596 |   0)   a.out-905    |   6.666 us    |                          }
+  629.012598 |   0)   a.out-905    |               |                          _raw_spin_unlock_irqrestore() {
+  629.012600 |   0)   a.out-905    |   1.000 us    |                            preempt_count_sub();
+  629.012606 |   0)   a.out-905    |   5.666 us    |                          }
+  629.012608 |   0)   a.out-905    | + 21.333 us   |                        }
+  629.012610 |   0)   a.out-905    |   0.667 us    |                        __printk_safe_exit();
+  629.012615 |   0)   a.out-905    | + 41.666 us   |                      }
+  629.012618 |   0)   a.out-905    |               |                      _raw_spin_lock() {
+  629.012620 |   0)   a.out-905    |   1.000 us    |                        preempt_count_add();
+  629.012626 |   0)   a.out-905    |   5.333 us    |                      }
+  629.012628 |   0)   a.out-905    |               |                      _raw_spin_unlock() {
+  629.012630 |   0)   a.out-905    |   1.000 us    |                        preempt_count_sub();
+  629.012635 |   0)   a.out-905    |   5.334 us    |                      }
+  629.012637 |   0)   a.out-905    |   0.666 us    |                      __printk_safe_exit();
+  629.012642 |   0)   a.out-905    |               |                      wake_up_klogd() {
+  629.012645 |   0)   a.out-905    |   1.000 us    |                        preempt_count_add();
+  629.012650 |   0)   a.out-905    |   0.667 us    |                        preempt_count_add();
+  629.012656 |   0)   a.out-905    |   0.666 us    |                        tick_nohz_tick_stopped();
+  629.012661 |   0)   a.out-905    |   0.666 us    |                        preempt_count_sub();
+  629.012666 |   0)   a.out-905    |   0.667 us    |                        preempt_count_sub();
+  629.012672 |   0)   a.out-905    | + 27.333 us   |                      }
+  629.012674 |   0)   a.out-905    | ! 178.667 us  |                    }
+  629.012676 |   0)   a.out-905    | ! 285.334 us  |                  }
+  629.012678 |   0)   a.out-905    | ! 290.667 us  |                }
+  629.012681 |   0)   a.out-905    | ! 297.000 us  |              }
+  629.012683 |   0)   a.out-905    | ! 302.334 us  |            }
+  629.012686 |   0)   a.out-905    |               |            device_reset() {
+  629.012689 |   0)   a.out-905    |               |              __reset_control_get() {
+  629.012691 |   0)   a.out-905    |               |                __of_reset_control_get() {
+  629.012695 |   0)   a.out-905    |               |                  of_parse_phandle_with_args() {
+  629.012697 |   0)   a.out-905    |               |                    __of_parse_phandle_with_args() {
+  629.012700 |   0)   a.out-905    |               |                      of_phandle_iterator_init() {
+  629.012703 |   0)   a.out-905    |               |                        of_find_property() {
+  629.012706 |   0)   a.out-905    |               |                          _raw_spin_lock_irqsave() {
+  629.012709 |   0)   a.out-905    |   1.000 us    |                            preempt_count_add();
+  629.012714 |   0)   a.out-905    |   5.667 us    |                          }
+  629.012716 |   0)   a.out-905    |   3.667 us    |                          __of_find_property();
+  629.012724 |   0)   a.out-905    |               |                          _raw_spin_unlock_irqrestore() {
+  629.012728 |   0)   a.out-905    |   1.000 us    |                            preempt_count_sub();
+  629.012733 |   0)   a.out-905    |   5.333 us    |                          }
+  629.012735 |   0)   a.out-905    | + 29.334 us   |                        }
+  629.012737 |   0)   a.out-905    | + 35.000 us   |                      }
+  629.012740 |   0)   a.out-905    |   1.000 us    |                      of_phandle_iterator_next();
+  629.012746 |   0)   a.out-905    | + 46.333 us   |                    }
+  629.012748 |   0)   a.out-905    | + 51.334 us   |                  }
+  629.012750 |   0)   a.out-905    | + 56.667 us   |                }
+  629.012753 |   0)   a.out-905    | + 61.667 us   |              }
+  629.012755 |   0)   a.out-905    | + 67.000 us   |            }
+  629.012757 |   0)   a.out-905    |               |            clk_prepare() {
+  629.012760 |   0)   a.out-905    |               |              clk_prepare_lock() {
+  629.012763 |   0)   a.out-905    |   1.333 us    |                mutex_trylock();
+  629.012770 |   0)   a.out-905    |   7.333 us    |              }
+  629.012772 |   0)   a.out-905    |               |              clk_core_prepare() {
+  629.012775 |   0)   a.out-905    |               |                clk_core_prepare() {
+  629.012777 |   0)   a.out-905    |               |                  clk_core_prepare() {
+  629.012780 |   0)   a.out-905    |               |                    clk_core_prepare() {
+  629.012783 |   0)   a.out-905    |   0.666 us    |                      clk_core_prepare();
+  629.012789 |   0)   a.out-905    |   7.000 us    |                    }
+  629.012792 |   0)   a.out-905    | + 12.333 us   |                  }
+  629.012794 |   0)   a.out-905    | + 17.667 us   |                }
+  629.012797 |   0)   a.out-905    | + 23.000 us   |              }
+  629.012799 |   0)   a.out-905    |               |              clk_prepare_unlock() {
+  629.012802 |   0)   a.out-905    |   0.667 us    |                mutex_unlock();
+  629.012807 |   0)   a.out-905    |   6.000 us    |              }
+  629.012809 |   0)   a.out-905    | + 49.333 us   |            }
+  629.012811 |   0)   a.out-905    |               |            clk_enable() {
+  629.012814 |   0)   a.out-905    |               |              clk_core_enable_lock() {
+  629.012817 |   0)   a.out-905    |               |                clk_enable_lock() {
+  629.012820 |   0)   a.out-905    |               |                  _raw_spin_trylock() {
+  629.012822 |   0)   a.out-905    |   1.000 us    |                    preempt_count_add();
+  629.012828 |   0)   a.out-905    |   6.000 us    |                  }
+  629.012830 |   0)   a.out-905    | + 11.667 us   |                }
+  629.012833 |   0)   a.out-905    |               |                clk_core_enable() {
+  629.012835 |   0)   a.out-905    |               |                  clk_core_enable() {
+  629.012838 |   0)   a.out-905    |               |                    clk_core_enable() {
+  629.012840 |   0)   a.out-905    |               |                      clk_core_enable() {
+  629.012843 |   0)   a.out-905    |   0.666 us    |                        clk_core_enable();
+  629.012848 |   0)   a.out-905    |   6.000 us    |                      }
+  629.012851 |   0)   a.out-905    | + 10.333 us   |                    }
+  629.012853 |   0)   a.out-905    |   1.000 us    |                    clk_divider_enable();
+  629.012858 |   0)   a.out-905    | + 20.667 us   |                  }
+  629.012860 |   0)   a.out-905    |               |                  clk_gate2_enable() {
+  629.012863 |   0)   a.out-905    |               |                    _raw_spin_lock_irqsave() {
+  629.012866 |   0)   a.out-905    |   0.667 us    |                      preempt_count_add();
+  629.012871 |   0)   a.out-905    |   5.666 us    |                    }
+  629.012873 |   0)   a.out-905    |               |                    clk_gate2_do_shared_clks() {
+  629.012876 |   0)   a.out-905    |   1.000 us    |                      imx_src_is_m4_enabled();
+  629.012882 |   0)   a.out-905    |   1.000 us    |                      arm_heavy_mb();
+  629.012887 |   0)   a.out-905    | + 11.666 us   |                    }
+  629.012889 |   0)   a.out-905    |               |                    _raw_spin_unlock_irqrestore() {
+  629.012891 |   0)   a.out-905    |   1.000 us    |                      preempt_count_sub();
+  629.012896 |   0)   a.out-905    |   5.333 us    |                    }
+  629.012899 |   0)   a.out-905    | + 36.333 us   |                  }
+  629.012901 |   0)   a.out-905    | + 66.334 us   |                }
+  629.012903 |   0)   a.out-905    |               |                clk_enable_unlock() {
+  629.012906 |   0)   a.out-905    |               |                  _raw_spin_unlock_irqrestore() {
+  629.012909 |   0)   a.out-905    |   0.666 us    |                    preempt_count_sub();
+  629.012914 |   0)   a.out-905    |   5.667 us    |                  }
+  629.012916 |   0)   a.out-905    | + 10.667 us   |                }
+  629.012918 |   0)   a.out-905    | ! 102.333 us  |              }
+  629.012921 |   0)   a.out-905    | ! 107.666 us  |            }
+  629.012923 |   0)   a.out-905    |               |            clk_prepare() {
+  629.012926 |   0)   a.out-905    |               |              clk_prepare_lock() {
+  629.012928 |   0)   a.out-905    |   1.000 us    |                mutex_trylock();
+  629.012935 |   0)   a.out-905    |   5.667 us    |              }
+  629.012937 |   0)   a.out-905    |               |              clk_core_prepare() {
+  629.012940 |   0)   a.out-905    |   0.666 us    |                clk_core_prepare();
+  629.012945 |   0)   a.out-905    |   6.000 us    |              }
+  629.012947 |   0)   a.out-905    |               |              clk_prepare_unlock() {
+  629.012950 |   0)   a.out-905    |   0.666 us    |                mutex_unlock();
+  629.012955 |   0)   a.out-905    |   5.666 us    |              }
+  629.012957 |   0)   a.out-905    | + 32.334 us   |            }
+  629.012959 |   0)   a.out-905    |               |            clk_enable() {
+  629.012962 |   0)   a.out-905    |               |              clk_core_enable_lock() {
+  629.012964 |   0)   a.out-905    |               |                clk_enable_lock() {
+  629.012967 |   0)   a.out-905    |               |                  _raw_spin_trylock() {
+  629.012969 |   0)   a.out-905    |   1.000 us    |                    preempt_count_add();
+  629.012974 |   0)   a.out-905    |   5.667 us    |                  }
+  629.012977 |   0)   a.out-905    | + 10.333 us   |                }
+  629.012979 |   0)   a.out-905    |               |                clk_core_enable() {
+  629.012981 |   0)   a.out-905    |   0.667 us    |                  clk_core_enable();
+  629.012986 |   0)   a.out-905    |               |                  clk_gate2_enable() {
+  629.012989 |   0)   a.out-905    |               |                    _raw_spin_lock_irqsave() {
+  629.012991 |   0)   a.out-905    |   0.666 us    |                      preempt_count_add();
+  629.012997 |   0)   a.out-905    |   6.667 us    |                    }
+  629.012999 |   0)   a.out-905    |               |                    clk_gate2_do_shared_clks() {
+  629.013002 |   0)   a.out-905    |   0.667 us    |                      imx_src_is_m4_enabled();
+  629.013007 |   0)   a.out-905    |   0.667 us    |                      arm_heavy_mb();
+  629.013012 |   0)   a.out-905    | + 10.333 us   |                    }
+  629.013014 |   0)   a.out-905    |               |                    _raw_spin_unlock_irqrestore() {
+  629.013016 |   0)   a.out-905    |   0.666 us    |                      preempt_count_sub();
+  629.013021 |   0)   a.out-905    |   5.667 us    |                    }
+  629.013024 |   0)   a.out-905    | + 35.333 us   |                  }
+  629.013026 |   0)   a.out-905    | + 45.667 us   |                }
+  629.013028 |   0)   a.out-905    |               |                clk_enable_unlock() {
+  629.013031 |   0)   a.out-905    |               |                  _raw_spin_unlock_irqrestore() {
+  629.013034 |   0)   a.out-905    |   0.667 us    |                    preempt_count_sub();
+  629.013039 |   0)   a.out-905    |   5.333 us    |                  }
+  629.013041 |   0)   a.out-905    | + 10.333 us   |                }
+  629.013043 |   0)   a.out-905    | + 79.000 us   |              }
+  629.013045 |   0)   a.out-905    | + 84.000 us   |            }
+  629.013048 |   0)   a.out-905    |               |            imx_setup_ufcr.constprop.2() {
+  629.013051 |   0)   a.out-905    |   0.666 us    |              arm_heavy_mb();
+  629.013056 |   0)   a.out-905    |   6.000 us    |            }
+  629.013058 |   0)   a.out-905    |   0.667 us    |            arm_heavy_mb();
+  629.013064 |   0)   a.out-905    |   0.667 us    |            arm_heavy_mb();
+  629.013070 |   0)   a.out-905    |               |            dma_request_slave_channel() {
+  629.013073 |   0)   a.out-905    |               |              dma_request_chan() {
+  629.013076 |   0)   a.out-905    |               |                of_dma_request_slave_channel() {
+  629.013079 |   0)   a.out-905    |               |                  of_find_property() {
+  629.013081 |   0)   a.out-905    |               |                    _raw_spin_lock_irqsave() {
+  629.013084 |   0)   a.out-905    |   1.000 us    |                      preempt_count_add();
+  629.013089 |   0)   a.out-905    |   5.333 us    |                    }
+  629.013091 |   0)   a.out-905    |   1.667 us    |                    __of_find_property();
+  629.013096 |   0)   a.out-905    |               |                    _raw_spin_unlock_irqrestore() {
+  629.013099 |   0)   a.out-905    |   0.666 us    |                      preempt_count_sub();
+  629.013105 |   0)   a.out-905    |   6.667 us    |                    }
+  629.013108 |   0)   a.out-905    | + 26.667 us   |                  }
+  629.013110 |   0)   a.out-905    | + 31.667 us   |                }
+  629.013113 |   0)   a.out-905    |   1.000 us    |                mutex_lock();
+  629.013119 |   0)   a.out-905    |   0.666 us    |                mutex_unlock();
+  629.013124 |   0)   a.out-905    | + 49.000 us   |              }
+  629.013126 |   0)   a.out-905    | + 53.667 us   |            }
+  629.013129 |   0)   a.out-905    |   2.667 us    |            imx_uart_dma_exit();
+  629.013136 |   0)   a.out-905    |               |            _raw_spin_lock_irqsave() {
+  629.013138 |   0)   a.out-905    |   1.000 us    |              preempt_count_add();
+  629.013143 |   0)   a.out-905    |   5.334 us    |            }
+  629.013145 |   0)   a.out-905    |   0.666 us    |            arm_heavy_mb();
+  629.013150 |   0)   a.out-905    |   0.666 us    |            arm_heavy_mb();
+  629.013155 |   0)   a.out-905    |   0.666 us    |            arm_heavy_mb();
+  629.013161 |   0)   a.out-905    |   1.000 us    |            arm_heavy_mb();
+  629.013166 |   0)   a.out-905    |   1.000 us    |            arm_heavy_mb();
+  629.013171 |   0)   a.out-905    |   0.667 us    |            arm_heavy_mb();
+  629.013176 |   0)   a.out-905    |               |            imx_enable_ms() {
+  629.013179 |   0)   a.out-905    |               |              mod_timer() {
+  629.013183 |   0)   a.out-905    |               |                lock_timer_base() {
+  629.013186 |   0)   a.out-905    |               |                  _raw_spin_lock_irqsave() {
+  629.013188 |   0)   a.out-905    |   1.000 us    |                    preempt_count_add();
+  629.013193 |   0)   a.out-905    |   5.667 us    |                  }
+  629.013196 |   0)   a.out-905    | + 10.666 us   |                }
+  629.013198 |   0)   a.out-905    |   0.667 us    |                detach_if_pending();
+  629.013204 |   0)   a.out-905    |   1.000 us    |                get_nohz_timer_target();
+  629.013209 |   0)   a.out-905    |               |                __internal_add_timer() {
+  629.013212 |   0)   a.out-905    |   1.000 us    |                  calc_wheel_index();
+  629.013217 |   0)   a.out-905    |   1.333 us    |                  enqueue_timer();
+  629.013223 |   0)   a.out-905    | + 11.000 us   |                }
+  629.013225 |   0)   a.out-905    |   0.667 us    |                trigger_dyntick_cpu();
+  629.013229 |   0)   a.out-905    |               |                _raw_spin_unlock_irqrestore() {
+  629.013232 |   0)   a.out-905    |   0.666 us    |                  preempt_count_sub();
+  629.013237 |   0)   a.out-905    |   5.333 us    |                }
+  629.013240 |   0)   a.out-905    | + 59.000 us   |              }
+  629.013243 |   0)   a.out-905    |               |              mctrl_gpio_enable_ms() {
+  629.013245 |   0)   a.out-905    |   1.667 us    |                mctrl_gpio_get();
+  629.013252 |   0)   a.out-905    |   7.000 us    |              }
+  629.013254 |   0)   a.out-905    | + 75.333 us   |            }
+  629.013256 |   0)   a.out-905    |               |            _raw_spin_unlock_irqrestore() {
+  629.013258 |   0)   a.out-905    |   1.000 us    |              preempt_count_sub();
+  629.013264 |   0)   a.out-905    |   5.333 us    |            }
+  629.013266 |   0)   a.out-905    | ! 888.666 us  |          }
+  629.013268 |   0)   a.out-905    |               |          uart_change_speed() {
+  629.013271 |   0)   a.out-905    |               |            imx_set_termios() {
+  629.013275 |   0)   a.out-905    |               |              del_timer_sync() {
+  629.013278 |   0)   a.out-905    |               |                try_to_del_timer_sync() {
+  629.013281 |   0)   a.out-905    |               |                  lock_timer_base() {
+  629.013283 |   0)   a.out-905    |               |                    _raw_spin_lock_irqsave() {
+  629.013286 |   0)   a.out-905    |   1.000 us    |                      preempt_count_add();
+  629.013293 |   0)   a.out-905    |   5.666 us    |                    }
+  629.013295 |   0)   a.out-905    | + 12.334 us   |                  }
+  629.013297 |   0)   a.out-905    |   1.000 us    |                  detach_if_pending();
+  629.013302 |   0)   a.out-905    |               |                  _raw_spin_unlock_irqrestore() {
+  629.013304 |   0)   a.out-905    |   0.667 us    |                    preempt_count_sub();
+  629.013310 |   0)   a.out-905    |   5.333 us    |                  }
+  629.013312 |   0)   a.out-905    | + 31.666 us   |                }
+  629.013314 |   0)   a.out-905    | + 37.000 us   |              }
+  629.013316 |   0)   a.out-905    |               |              uart_get_baud_rate() {
+  629.013319 |   0)   a.out-905    |   0.667 us    |                tty_termios_baud_rate();
+  629.013325 |   0)   a.out-905    |   6.666 us    |              }
+  629.013327 |   0)   a.out-905    |   1.000 us    |              uart_get_divisor();
+  629.013332 |   0)   a.out-905    |               |              _raw_spin_lock_irqsave() {
+  629.013334 |   0)   a.out-905    |   0.667 us    |                preempt_count_add();
+  629.013339 |   0)   a.out-905    |   5.667 us    |              }
+  629.013342 |   0)   a.out-905    |   0.667 us    |              uart_update_timeout();
+  629.013348 |   0)   a.out-905    |   0.667 us    |              arm_heavy_mb();
+  629.013354 |   0)   a.out-905    |   1.000 us    |              arm_heavy_mb();
+  629.013360 |   0)   a.out-905    |   3.000 us    |              tty_termios_encode_baud_rate();
+  629.013368 |   0)   a.out-905    |   1.000 us    |              arm_heavy_mb();
+  629.013373 |   0)   a.out-905    |   0.666 us    |              arm_heavy_mb();
+  629.013379 |   0)   a.out-905    |   0.667 us    |              arm_heavy_mb();
+  629.013384 |   0)   a.out-905    |   0.666 us    |              arm_heavy_mb();
+  629.013389 |   0)   a.out-905    |   0.666 us    |              arm_heavy_mb();
+  629.013394 |   0)   a.out-905    |   0.666 us    |              arm_heavy_mb();
+  629.013399 |   0)   a.out-905    |   1.000 us    |              arm_heavy_mb();
+  629.013405 |   0)   a.out-905    |               |              _raw_spin_unlock_irqrestore() {
+  629.013408 |   0)   a.out-905    |   0.667 us    |                preempt_count_sub();
+  629.013413 |   0)   a.out-905    |   5.333 us    |              }
+  629.013415 |   0)   a.out-905    | ! 141.666 us  |            }
+  629.013417 |   0)   a.out-905    |               |            _raw_spin_lock_irq() {
+  629.013420 |   0)   a.out-905    |   1.000 us    |              preempt_count_add();
+  629.013425 |   0)   a.out-905    |   6.000 us    |            }
+  629.013427 |   0)   a.out-905    |               |            _raw_spin_unlock_irq() {
+  629.013430 |   0)   a.out-905    |   0.666 us    |              preempt_count_sub();
+  629.013435 |   0)   a.out-905    |   5.667 us    |            }
+  629.013437 |   0)   a.out-905    | ! 167.000 us  |          }
+  629.013440 |   0)   a.out-905    | # 1179.666 us |        }
+  629.013442 |   0)   a.out-905    | # 1185.334 us |      }
+  629.013444 |   0)   a.out-905    |   1.000 us    |      mutex_unlock();
+  629.013450 |   0)   a.out-905    |               |      tty_port_block_til_ready() {
+  629.013453 |   0)   a.out-905    |               |        _raw_spin_lock_irqsave() {
+  629.013456 |   0)   a.out-905    |   0.667 us    |          preempt_count_add();
+  629.013461 |   0)   a.out-905    |   5.666 us    |        }
+  629.013463 |   0)   a.out-905    |               |        _raw_spin_unlock_irqrestore() {
+  629.013465 |   0)   a.out-905    |   0.667 us    |          preempt_count_sub();
+  629.013470 |   0)   a.out-905    |   5.667 us    |        }
+  629.013473 |   0)   a.out-905    |               |        uart_dtr_rts() {
+  629.013476 |   0)   a.out-905    |               |          uart_port_dtr_rts() {
+  629.013479 |   0)   a.out-905    |               |            uart_update_mctrl() {
+  629.013482 |   0)   a.out-905    |               |              _raw_spin_lock_irqsave() {
+  629.013484 |   0)   a.out-905    |   1.000 us    |                preempt_count_add();
+  629.013490 |   0)   a.out-905    |   5.333 us    |              }
+  629.013492 |   0)   a.out-905    |               |              imx_set_mctrl() {
+  629.013495 |   0)   a.out-905    |   0.666 us    |                arm_heavy_mb();
+  629.013500 |   0)   a.out-905    |   0.666 us    |                arm_heavy_mb();
+  629.013505 |   0)   a.out-905    |   0.666 us    |                arm_heavy_mb();
+  629.013511 |   0)   a.out-905    |               |                mctrl_gpio_set() {
+  629.013515 |   0)   a.out-905    |               |                  gpiod_set_array_value() {
+  629.013518 |   0)   a.out-905    |   1.333 us    |                    gpiod_set_array_value_complex();
+  629.013524 |   0)   a.out-905    |   7.000 us    |     |   5.334 us    |          }
+  629.013232 |   0)   a.out-905    |   0.666 us    |                  preempt_count_sub();
+  629.013237 |   0)   a.out-905    |   5.333 us    |                } /* _raw_spin_unlock_irqrestore */
+  629.013240 |   0)   a.out-905    | + 59.000 us   |              } /* mod_timer */
+  629.013243 |   0)   a.out-905    |               |              mctrl_gpio_enable_ms() {
+  629.013245 |   0)   a.out-905    |   1.667 us    |                mctrl_gpio_get();
+  629.013252 |   0)   a.out-905    |   7.000 us    |              }
+  629.013254 |   0)   a.out-905    | + 75.333 us   |            } /* imx_enable_ms */
+  629.013256 |   0)   a.out-905    |               |            _raw_spin_unlock_irqrestore() {
+  629.013258 |   0)   a.out-905    |   1.000 us    |              preempt_count_sub();
+  629.013264 |   0)   a.out-905    |   5.333 us    |            }
+  629.013266 |   0)   a.out-905    | ! 888.666 us  |          } /* imx_startup */
+  629.013268 |   0)   a.out-905    |               |          uart_change_speed() {
+  629.013271 |   0)   a.out-905    |               |            imx_set_termios() {
+  629.013275 |   0)   a.out-905    |               |              del_timer_sync() {
+  629.013278 |   0)   a.out-905    |               |                try_to_del_timer_sync() {
+  629.013281 |   0)   a.out-905    |               |                  lock_timer_base() {
+  629.013283 |   0)   a.out-905    |               |                    _raw_spin_lock_irqsave() {
+  629.013286 |   0)   a.out-905    |   1.000 us    |                      preempt_count_add();
+  629.013293 |   0)   a.out-905    |   5.666 us    |                    }
+  629.013295 |   0)   a.out-905    | + 12.334 us   |                  }
+  629.013297 |   0)   a.out-905    |   1.000 us    |                  detach_if_pending();
+  629.013302 |   0)   a.out-905    |               |                  _raw_spin_unlock_irqrestore() {
+  629.013304 |   0)   a.out-905    |   0.667 us    |                    preempt_count_sub();
+  629.013310 |   0)   a.out-905    |   5.333 us    |                  }
+  629.013312 |   0)   a.out-905    | + 31.666 us   |                }
+  629.013314 |   0)   a.out-905    | + 37.000 us   |              }
+  629.013316 |   0)   a.out-905    |               |              uart_get_baud_rate() {
+  629.013319 |   0)   a.out-905    |   0.667 us    |                tty_termios_baud_rate();
+  629.013325 |   0)   a.out-905    |   6.666 us    |              }
+  629.013327 |   0)   a.out-905    |   1.000 us    |              uart_get_divisor();
+  629.013332 |   0)   a.out-905    |               |              _raw_spin_lock_irqsave() {
+  629.013334 |   0)   a.out-905    |   0.667 us    |                preempt_count_add();
+  629.013339 |   0)   a.out-905    |   5.667 us    |              }
+  629.013342 |   0)   a.out-905    |   0.667 us    |              uart_update_timeout();
+  629.013348 |   0)   a.out-905    |   0.667 us    |              arm_heavy_mb();
+  629.013354 |   0)   a.out-905    |   1.000 us    |              arm_heavy_mb();
+  629.013360 |   0)   a.out-905    |   3.000 us    |              tty_termios_encode_baud_rate();
+  629.013368 |   0)   a.out-905    |   1.000 us    |              arm_heavy_mb();
+  629.013373 |   0)   a.out-905    |   0.666 us    |              arm_heavy_mb();
+  629.013379 |   0)   a.out-905    |   0.667 us    |              arm_heavy_mb();
+  629.013384 |   0)   a.out-905    |   0.666 us    |              arm_heavy_mb();
+  629.013389 |   0)   a.out-905    |   0.666 us    |              arm_heavy_mb();
+  629.013394 |   0)   a.out-905    |   0.666 us    |              arm_heavy_mb();
+  629.013399 |   0)   a.out-905    |   1.000 us    |              arm_heavy_mb();
+  629.013405 |   0)   a.out-905    |               |              _raw_spin_unlock_irqrestore() {
+  629.013408 |   0)   a.out-905    |   0.667 us    |                preempt_count_sub();
+  629.013413 |   0)   a.out-905    |   5.333 us    |              }
+  629.013415 |   0)   a.out-905    | ! 141.666 us  |            }
